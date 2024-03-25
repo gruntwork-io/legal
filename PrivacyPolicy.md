@@ -1,0 +1,211 @@
+# Privacy Policy
+
+[View CHANGELOG](https://gruntwork.io/legal/feed)
+
+Gruntwork, Inc. (“Gruntwork,” “we,” “our” and/or “us”) respects your privacy and is committed to protecting it through our compliance with this privacy policy (the “Privacy Policy”). Gruntwork is a DevOps platform designed to enable software teams to quickly launch production-grade cloud infrastructure. This Privacy Policy describes the types of information we may collect from and about you when you visit our website located at [www.gruntwork.io](https://gruntwork.io/) (the “Site”); use the Gruntwork services, including our cloud-based developer portal located at [app.gruntwork.io](https://app.gruntwork.io/) (“the Portal”) and any additional Gruntwork-branded features and functionalities, websites, user interfaces, and applications (collectively with the Portal, the “Services”); engage with us through our newsletters, emails, and branded social media accounts; or otherwise interact with us. It also describes our practices for using, maintaining, protecting, and disclosing that information as well as certain legal rights you may have, subject to applicable law, and how you can exercise them.
+
+For the purposes of this Privacy Policy, “personal data” means information about an identified or identifiable individual, such as their name or email address and includes “personal data” as defined by the European Union’s General Data Protection Regulation (“GDPR”) and “personal information” as defined by the California Consumer Privacy Act (“CCPA”). Some information that is automatically disclosed to us or collected by us through your use of our Services meets this definition.
+
+## To what data does this privacy policy apply?
+
+This Privacy Policy applies to information we collect and use for our own purposes, including providing the Services and marketing our business. In these situations, Gruntwork is considered the “data controller” for purposes of the GDPR and similar data protection laws. This Privacy Policy does not apply to personal data Gruntwork processes on behalf of our customers in our capacity as a “data processor” (or a comparable role such as a “service provider” in certain jurisdictions). In these situations, we only process customer information in accordance with our customer’s instructions and our agreement with that customer.
+
+By using any of Gruntwork’s Services, you confirm you have agreed to the Site Terms and/or Gruntwork Terms of Service (the “Terms”), to the extent permitted by law, and have read and understood this Privacy Policy.
+
+## What information do we collect about you?
+
+### Information You Give Us Directly
+
+We may collect certain information that you voluntarily provide to us in the following ways:
+
+- When you fill out forms on our Site, including when you contact us for additional information;
+- When you sign up to receive our newsletter, subscribe to customer alerts, complete a survey, or register for a training or event;
+- When you purchase Services;
+- When you create an account and add Authorized Users as well as when Authorized Users create their accounts and populate their profiles;
+- When you use the Services;
+- When you email us to ask a question or request customer service;
+- When you communicate with us via our branded social media accounts;
+- When you post, share, or communicate with us or other Gruntwork users through community chat rooms, community forums, or integrated chat providers;
+- When you scan your badge or otherwise leave your details with us at an event or trade show; and
+- When you apply to work with us.
+
+The types of information we collect in these situations can include your name, email address and other contact information, profile photo, company name, company address, and financial and billing information (including certain payment card information, bank details, and email addresses used for invoicing). In connection with your use of the Services, we may also collect domain names, GitHub repo URLs, GitHub user IDs, Keybase usernames, cloud account IDs, and details found in any checklists or other documentation maintained by you on the Gruntwork Services. We use this information to provide you with the Services and in accordance with your instructions. If you communicate with our team via chat, email, or telephone or communicate with us or other Gruntwork users through integrated chat interfaces or through a third-party social media platform, we may collect details relating to integrating your chat provider with ours (including URL and admin email address) as well as the contents of your communications which can include any information you choose to include. Likewise, if you chat with other Gruntwork users through our Community Forum or other community chat room, we may collect details relating to the contents of your communications which can include any information you choose to include. If you apply to work with us, we will collect any information you choose to share with us in your application.
+
+### Information We Collect Automatically
+
+We also collect information automatically as you navigate our Site, use our Services, or interact with our emails. This can include the following information:
+
+- Device, internet, and mobile information such as the hardware model of the device you are using, the version of the operating system you are using, your unique device identifiers, your browser type, your language choices, your wireless network, and your mobile network information (including your mobile phone number);
+  Location-related information, which we derive from things like your device’s IP address or your mobile device’s GPS signal;
+- Information about your visit to our Site or Services, such as the date and time of your visit, the information you searched for to find our Site, the website you came from, the website you visit when you leave us, and how you used or didn’t use our Services;
+- Information about your activity on our Services such as which modules you chose to view and which modules you chose to deploy;
+- Errors, crash reports, and other information relating to technical problems on our Site or Services, including basic information about what happened internally leading up to the crash.
+
+Some of this information may be collected using cookies and similar technologies. To learn more about our use of cookies, please see the section entitled “We use cookies and related technologies” below.
+
+### Information We Collect From Other Sources
+
+We may also collect information from third parties, such as our service providers, when they are legally allowed to share your information with us. For instance, we may collect personal data about you from the following sources:
+
+- <u>Payment processors</u> — In general, your payment card information is provided directly to our third-party payment processor and we do not collect or store that information. However, we may receive limited information from our payment processor such as the last four digits of your card, the country of issuance, and the expiration date.
+- <u>Third-party authentication providers</u> — We allow you to sign up and log in to our Portal using third-party authentication providers such as Google. If you chose to sign up and log in in this manner, the third-party authentication service will ask your permission to share certain information with us, such as your name and email address. You can control the information that we receive from third-party authentication providers using the privacy settings in your accounts with those services.
+- <u>Third-party services</u> — We allow customers to enable a variety of third-party services on our Portal. For instance, users can connect their accounts on Slack and Github to their Gruntwork account. Once enabled, the provider of a third-party service may share certain information with us such as the username and email address associated with that user on the third-party service as well as additional information that the provider has chosen to make available to facilitate the integration. You should check the privacy settings and privacy policies of these third-party services to understand what information may be shared with us.
+- <u>Another individual at your organization</u> — We may collect your personal data from other individuals at your organization who may provide us with your business contact information in the course of using our Services.
+- <u>Publicly available sources</u> — We may supplement the information that we collect from you (such as your email address) with additional information about you and your company obtained from business partners, marketers, researchers, data brokers, and publicly available databases. For example, we may use information from LinkedIn to update information about you in our contact database.
+
+We may combine the information we collect about you from these various sources. If a combination of information that we collect identifies you as an individual, we will treat the combined information as personal data.
+
+## We use cookies and related technologies
+
+The technologies we use for automatic data collection may include cookies. A cookie is a small file placed on the hard drive of your device. You can disable cookies, limit the types of cookies you allow, or set your browser to alert you when cookies are being sent. Please refer to the help section of your chosen browser for help managing your cookie preferences. Please note that if you refuse to accept browser cookies you may be unable to access certain parts of the Services.
+
+We also allow others to use cookies within the Services as described below. Cookies can store your preferences, your username, and your session information. For choices you have on cookies and related technologies, please see the “What rights and choices do you have with respect to our collection and use of your data?” section of this Privacy Policy. For additional information about cookies and related technologies, please see our Cookie Policy.
+
+## We may partner with third parties
+
+We use information that we collect about you or that you provide to us, including any personal data, for purposes described in this Privacy Policy and when the law allows us to do so. For example, we use your information for the following purposes:
+
+We may provide links to or otherwise integrate third-party websites, services, and applications that are not operated or controlled by Gruntwork. This Privacy Policy does not apply to the privacy practices of those third parties. The fact that we link to a website, service, or application is not an endorsement, authorization, or representation of our affiliation with that third party. We encourage you to review the privacy policies of any third-party service before providing any personal data to or through them. If you click on a link to a third-party website, such third party may also transmit cookies to you. Please be aware that cookies placed by third parties may continue to track your activities online even after you are no longer using any of the Services, and those third parties may not honor “Do Not Track” requests you have set using your web browser.
+
+## How do we use your information?
+
+We use information that we collect about you or that you provide to us, including any personal data, for purposes described in this Privacy Policy and when the law allows us to do so. For example, we use your information for the following purposes:
+
+- To provide you with the Services, training materials, and other products and services that you request from us.
+- To provide you with the Site and its content.
+- To confirm your identity in connection with your use of the Services.
+- To process and complete transactions.
+- To provide technical and other support to you.
+- To allow you to communicate with us or with other Gruntwork users.
+- To send you promotional communications, such as providing you with information about services, features, surveys, newsletters, offers and events and providing other news or information about us, provided you have given us your consent.
+- To personalize your experience.
+- To improve the Services and enhance the customer experience of all of our users.
+- To enable service providers to perform certain services on our behalf.
+- To provide you with notices about your account.
+- To carry out our obligations and enforce our rights arising from any contracts entered into between you and us, including for billing and collection.
+- To notify you about changes to the Services.
+- To enhance the safety and security of all of the Services.
+- To verify your identity and prevent fraud or other unauthorized or illegal activity.
+- To perform advertising on third-party websites.
+- For any other purpose with your consent.
+
+## Interest-based or online behavioral advertising
+
+We may use third-party advertising companies to serve interest-based advertisements to you. These companies compile information from various online sources (including mobile-enabled browsers and applications) to match you with ads that will be the most relevant, interesting, and timely for you. If you would like to opt out of interest-based advertising, please visit https://optout.networkadvertising.org/#/. Please note that you will be opted out of all interest-based advertising from all business members of the Network Advertising Initiative for that specific browser on that specific device. If you opt out, you may continue to see Gruntwork’s or our partners’ online advertisements; however, these ads will not be as relevant to you.
+
+## Our legal bases for handling your information
+
+The laws in some jurisdictions require companies to tell you about the legal ground they rely on to use or disclose your personal data. To the extent those laws apply, our legal grounds are as follows:
+
+- Where the use of your information is necessary for the performance of a contract we are about to enter into or have entered into with you;
+- Where the use is necessary for the purposes of our legitimate interests (or those of a third party);
+- Where we need to comply with a legal or regulatory obligation; or
+- Where you have given your consent, which can be withdrawn at any time.
+- Where we act as a processor of personal data on behalf of an organization (or a comparable role such as a “service provider” in certain jurisdictions), we process the personal data pursuant to our contract with the organization.
+
+## Where do we store and process your data?
+
+We may store and process any information that we collect (personal or otherwise) ourselves or in databases and servers owned and maintained by us, our affiliates, agents, or service providers, including without limitation in a Gruntwork-owned AWS account. If you access or use the Services outside of the United States, information that we collect about you may be transferred to servers inside the United States, or in any country where we have operations or where we engage vendors or service providers. These countries may not have the same data protection laws as the country in which you originally provided the data. By using the Services, or submitting your personal data to us, you consent to such transfer and processing of your such information. If you reside or are located in the European Economic Area ("EEA") and such transfers occur, we take appropriate steps to provide the same level of protection for the processing carried out in any such countries as you would have within the EEA to the extent feasible under applicable law. You may contact us at privacy@gruntwork.io to request a copy of the relevant mechanism we use to transfer personal data outside the EEA.
+
+We may also store some information locally on your computer or other devices. For example, we may store information as local cache so that you can open the Site and view content faster.
+
+## We retain your data only as long as necessary
+
+We will only retain your personal data, in a form which permits us to identify you, for as long as necessary to fulfill the purposes we collected it for. We will retain and use your personal data as necessary to satisfy any legal, accounting, or reporting requirements; to resolve disputes; or to enforce our agreements and rights. After this, we will either securely delete or anonymize your personal data so that it cannot be linked back to you.
+
+## How we secure your data
+
+We understand that the security of your personal data is important. We provide reasonable administrative, technical, and physical security controls to protect your personal data. However, despite our efforts, no security controls are 100% effective. Any transmission of personal data is at your own risk. Gruntwork cannot and does not guarantee absolute security.
+
+## How do we share your information?
+
+We may disclose personal data that we collect or you provide as described in this Privacy Policy:
+
+- To our current and future parents, subsidiaries, affiliates, and other companies under common control and ownership.
+- To other users in your organization in connection with the Services.
+- To service providers, contractors, and other third parties we use to support the Services and our business, including payment processors and marketing support, where they need access to data in order to perform functions on our behalf.
+- To a potential or actual buyer, assignee, or other successor (including its related advisors and agents) in connection with a merger, divestiture, restructuring, reorganization, dissolution or other sale or transfer of some or all of Gruntwork’s assets, whether as a going concern or as part of a bankruptcy, liquidation, or similar proceeding.
+- To other Gruntwork users if you participate in our Community Forum or other community chat room.
+- To the public if you post information to our Site or our branded social media pages.
+- To fulfill the purpose for which you provide it.
+- With your consent.
+
+## We may share your information when legally required to do so
+
+We may also disclose your personal data:
+
+- To comply with any court order, law, or legal process, including to respond to any government or regulatory request.
+- To enforce or apply the Terms and other agreements, including for billing and collection purposes.
+- If we believe disclosure is necessary or appropriate to protect the rights, property, or safety of Gruntwork, our customers, or others.
+
+## We will try to limit sharing when possible
+
+We may share information that is anonymized or in an aggregated form that does not directly identify you and we may use and share any such information for any purpose without restriction so long as it does not violate the terms of this Privacy Policy or any applicable law.
+
+We respect your right to the privacy of your personal data and will use commercially reasonable efforts both to de-identify your personal data and to limit sharing when possible.
+
+## What rights and choices do you have with respect to our collection and use of your data?
+
+We strive to provide you with choices regarding the personal data you provide to us. We have created mechanisms to provide you with the following control over your personal data:
+
+- Cookies and Related Technologies. You can set your browser to refuse some or all browser cookies, or to alert you when cookies are being sent. If you disable or refuse cookies, please note that all or some parts of the Services may then be inaccessible or not function properly.
+
+- Promotional Offers from Gruntwork. If you do not wish to have your email address/contact information used by Gruntwork to market or otherwise promote our own or third parties’ products or services, you can opt-out at any time through the unsubscribe mechanism at the bottom of the applicable email. It may take up to 10 days to process your request. Please note that if you are a registered user of the Services or if you have engaged in transactions with us, we may continue to send transactional or relationship messages (e.g., sign-in notifications or account notifications) after you opt out of marketing messages.
+
+- Correct or Delete Your Data. If you are a registered user of the Services, you may be able to access, update, or change personal data you have provided through your account settings. For some requests, such as changes to billing information or account data deletion, we may ask you to verify your identity before we can process your request. You may also contact us at any time at privacy@gruntwork.io to change, correct or delete any personal data that you have provided to us. Note that if you delete your personal data, you may not be able to use certain aspects of the Services.
+
+- Data Requests. Certain privacy laws, including the GDPR and the CCPA provide users with rights related to their personal data. Depending on your location, you may be eligible for a number of rights with respect to your information.
+
+  - _Right to Access & Portability:_ You may have the right to access the information we hold about you and request a copy of your personal data in an easily accessible format along with information explaining how that data is used. You can exercise this right by visiting your account settings or by emailing us at privacy@gruntwork.io.
+
+  - _Right to Correction:_ You have the right to request that we correct information about you. By visiting your account settings, you can correct and change certain personal data associated with your account.
+
+  - _Right to Restrict Processing:_ In certain cases where we process your information, you may also have the right to restrict or limit the ways in which we use your personal data.
+
+  - _Right to Deletion:_ In certain circumstances, you have the right to request the deletion of your personal data, except information we are required to retain by law, regulation, or to protect the safety, security, and integrity of the Services.
+
+  - _Right to Object:_ If we process your personal data based on our legitimate interests as explained above, or in the public interest, you can object to this processing in certain circumstances. In such cases, we will stop processing your personal data unless we have a compelling legitimate ground to continue processing or where it is legally necessary.
+
+  - _Right to Withdraw Consent:_ Where we rely on consent, you can withdraw your consent to our processing by using various means we offer such as an email unsubscribe link or your account settings. This is without prejudice to your right to permanently close your account and delete your personal data.
+
+- The CCPA provides California residents with the following additional rights:
+
+  - _Right to Know:_ California residents may request disclosure of the specific pieces and/or categories of personal data that we have collected about them, the categories of sources for that personal data, the business or commercial purposes for collecting the information, the categories of personal data that we have disclosed, and the categories of third parties with which the information was shared.
+
+  - _Right to Opt-Out:_ To the extent that Gruntwork “sells” personal data (as that term is defined under the CCPA), California residents are entitled to opt-out of the “sale” of data at any time (see below for more information).
+
+Limiting use of, or deleting, your personal data may affect features and uses that rely on that information. However, we will not discriminate against you for exercising any of your rights, including denying you goods or services, providing you with a different level or quality of services, or charging you different prices or rates for services.
+
+We will consider all requests and provide our response within the time period stated by applicable law. Please note, however, that certain information may be exempt from such requests in some circumstances, which may include if we need to keep processing your information for our legitimate interests or to comply with a legal obligation. Before responding to your request, we may require that you provide us with additional information to confirm your identity. You may designate an authorized agent to make a request on your behalf. In order to designate an authorized agent to make a request on your behalf, you must provide a valid power of attorney, the requester’s valid government-issued identification, and the authorized agent’s valid government-issued identification. We may verify the authenticity of the request directly with you. You also have the right to lodge a complaint with the authorities applicable to your situation. However, we invite you to contact us with any concern, as we would be happy to try to resolve it directly.
+
+### Additional Disclosures for California Residents
+
+<u>Notice of Collection:</u> In addition to the rights and choices described above, the CCPA requires disclosure of the categories of personal data collected over the past 12 months. While this information is provided in greater detail in the “What information do we collect about you?” section above, the categories of personal data that we have collected – as described by the CCPA – are:
+
+- Identifiers, including name, email address, IP address, and mobile device ID.
+- Other individual records, such as phone number, billing address, or employment information. This category includes personal data protected under Cal. Civ. Code 1798.80e and overlaps with other categories listed here.
+- Commercial information, including subscriptions and engagement with the Services.
+- Employment information, including company name and job title.
+- Geolocaton data, including general location data derived from IP addresses and location-enabled services such as WiFi.
+- Inferences, including information about your interests and preferences.
+- Internet activity, including your interactions with the Services and what led you to Gruntwork.
+
+<u>The Purposes for Our Collection:</u> We collect and use these categories of personal data for our business and commercial purposes described in the “How do we use your information” section above, including providing and improving the Services, maintaining the safety and security of the Services, and for advertising and marketing our business.
+
+<u>Third-Party Marketing and Your Rights (Opt-Out of “Sale”):</u> Gruntwork does not sell personal data to third parties for monetary value. However, the term “sale” is defined broadly in the CCPA. To the extent that “sale” under the CCPA is interpreted to include interest-based advertising or other data uses described in the “How do we use your information” section above, California residents are entitled to opt out of the “sale” of their personal data at any time by emailing us at privacy@gruntwork.io.
+
+<u>“Do Not Track” Signals:</u> We do not recognize or respond to any web browser-initiated “Do Not Track” signals. At present, no universally accepted standard exists on how companies should respond to “Do Not Track” signals. In the event a universally accepted standard is established, we will assess and provide an appropriate response to these signals. If you wish, you can configure most browsers to reject cookies or to notify you when you are sent a cookie, giving you a chance to decide whether or not to accept it. Consult the help section of your browser to learn more about how to do this. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of the Services.
+
+<u>Shine The Light:</u> California Civil Code §1798.83 permits users of the Site who are California residents to request certain information regarding our disclosure of personal data to third parties for their direct marketing purposes. Gruntwork does not share personal data with third parties for their direct marketing purposes.
+
+## Changes to our Privacy Policy
+
+We may amend this Privacy Policy to reflect changes in the law, our company, the Services, our data collection use and practices, or advances in technology. Depending on the type of change, we may notify you of the change by posting a notice on this page or by sending you an email. Please carefully review any changes made to this Privacy Policy. Your continued use of the Services after we make changes to this Privacy Policy is deemed to be acceptance of those changes.
+
+## Children’s privacy
+
+The Services are intended for adults and we do not knowingly collect personal data from children. If you are a parent or legal guardian and think your child under the age of 13 (or a higher age threshold where applicable) has given us personal data without your consent, please contact us at privacy@gruntwork.io.
+
+## Contact us
+
+To ask questions or comment about this Privacy Policy and our privacy practices or if you need to reach us for any other reason, you may contact us by email at privacy@gruntwork.io or by mail at Gruntwork, Inc., 221 E. Indianola Avenue, Phoenix, AZ 85012 U.S.A.
