@@ -1,12 +1,12 @@
 # Cookie Policy
 
-[View CHANGELOG](https://gruntwork.io/legal/feed)
-
 Gruntwork, Inc. (“Gruntwork”, “we”, “our” and/or “us”) uses cookies and similar technologies when you visit our website, https://gruntwork.io (“the Website”), and use the Gruntwork services, including all associated features and functionalities, websites, user interfaces, and applications (collectively, the “Services”). By using our Services, you agree to our use of cookies.
 
 ## What are cookies?
 
-A cookie is a small piece of data stored on your computer by your web browser. Cookies were designed to be a reliable way for websites to remember information such as your authentication status, device information such as IP address and operating system, or information previously entered into form fields such as names and addresses. <br><br> Cookies that are set directly by a website you visit are called “first-party cookies.” These are generally used to enable core functionality like authentication and session management. Cookies that are set by anyone other than the website you are visiting are called “third-party cookies.” Third-party cookies enable third-party features or functionality on or through the website such as interactive content, analytics and advertising. The parties that set these third-party cookies can recognize your computer both when it visits the website in question and when it visits certain other websites.
+A cookie is a small piece of data stored on your computer by your web browser. Cookies were designed to be a reliable way for websites to remember information such as your authentication status, device information such as IP address and operating system, or information previously entered into form fields such as names and addresses.
+
+Cookies that are set directly by a website you visit are called “first-party cookies.” These are generally used to enable core functionality like authentication and session management. Cookies that are set by anyone other than the website you are visiting are called “third-party cookies.” Third-party cookies enable third-party features or functionality on or through the website such as interactive content, analytics and advertising. The parties that set these third-party cookies can recognize your computer both when it visits the website in question and when it visits certain other websites.
 
 ## Why do we use cookies?
 
@@ -19,9 +19,9 @@ Our Services use cookies to:
 
 ## What types of cookies do we use?
 
-The following describes the types of cookies we use with our Services. To opt out of any cookies, see the section [Opting out of cookies](https://gruntwork.io/legal/cookie-policy#opting-out-of-cookies). All third parties listed below set third-party cookies with our Services, but **please note that this list is not an exhaustive list at all times of all third parties who set third-party cookies with our Services.**
+The following describes the types of cookies we use with our Services. To opt out of any cookies, see the section [Opting out of cookies](#opting-out-of-cookies). All third parties listed below set third-party cookies with our Services, but **please note that this list is not an exhaustive list at all times of all third parties who set third-party cookies with our Services.**
 
-### Essential cookies <br>
+### Essential cookies
 
 These cookies are required for technical reasons in order for our Services to operate.
 
@@ -40,7 +40,7 @@ Google, Inc. (https://google.com)
 HubSpot, Inc. (https://hubspot.com)
 
 **How To Opt Out of Them:**
-See the section [Opting out of cookies](https://gruntwork.io/legal/cookie-policy#opting-out-of-cookies) > [Third-party cookies](https://gruntwork.io/legal/cookie-policy#third-party-cookies)
+See the section [Opting out of cookies](#opting-out-of-cookies) > [Third-party cookies](#third-party-cookies)
 
 ### Customization cookies
 
@@ -77,7 +77,7 @@ If you would like to opt out of third-party cookies, here are some options:
 
 ## Updates to this policy
 
-The date at the top of this policy indicates when it was last updated. We may periodically revise this policy to reflect changes to the cookies we use, or for operational, legal, or regulatory reasons. We will notify you of any changes by posting the new policy on our Website with a new effective date. If we make material changes, we may provide you with additional notice, such as posting a statement on our homepage or sending you an email notification, if we have your email address on file.
+You can see the history of updates to this cookie policy at https://github.com/gruntwork-io/legal. We may periodically revise this policy to reflect changes to the cookies we use, or for operational, legal, or regulatory reasons. We will notify you of any changes by posting the new policy on our Website with a new effective date. If we make material changes, we may provide you with additional notice, such as posting a statement on our homepage or sending you an email notification, if we have your email address on file.
 
 ## Further information
 
