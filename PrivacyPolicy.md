@@ -1,7 +1,5 @@
 # Privacy Policy
 
-[View CHANGELOG](https://gruntwork.io/legal/feed)
-
 Gruntwork, Inc. (“Gruntwork,” “we,” “our” and/or “us”) respects your privacy and is committed to protecting it through our compliance with this privacy policy (the “Privacy Policy”). Gruntwork is a DevOps platform designed to enable software teams to quickly launch production-grade cloud infrastructure. This Privacy Policy describes the types of information we may collect from and about you when you visit our website located at [www.gruntwork.io](https://gruntwork.io/) (the “Site”); use the Gruntwork services, including our cloud-based developer portal located at [app.gruntwork.io](https://app.gruntwork.io/) (“the Portal”) and any additional Gruntwork-branded features and functionalities, websites, user interfaces, and applications (collectively with the Portal, the “Services”); engage with us through our newsletters, emails, and branded social media accounts; or otherwise interact with us. It also describes our practices for using, maintaining, protecting, and disclosing that information as well as certain legal rights you may have, subject to applicable law, and how you can exercise them.
 
 For the purposes of this Privacy Policy, “personal data” means information about an identified or identifiable individual, such as their name or email address and includes “personal data” as defined by the European Union’s General Data Protection Regulation (“GDPR”) and “personal information” as defined by the California Consumer Privacy Act (“CCPA”). Some information that is automatically disclosed to us or collected by us through your use of our Services meets this definition.
@@ -14,7 +12,7 @@ By using any of Gruntwork’s Services, you confirm you have agreed to the Site 
 
 ## What information do we collect about you?
 
-### Information You Give Us Directly
+### Information you give us directly
 
 We may collect certain information that you voluntarily provide to us in the following ways:
 
@@ -31,7 +29,7 @@ We may collect certain information that you voluntarily provide to us in the fol
 
 The types of information we collect in these situations can include your name, email address and other contact information, profile photo, company name, company address, and financial and billing information (including certain payment card information, bank details, and email addresses used for invoicing). In connection with your use of the Services, we may also collect domain names, GitHub repo URLs, GitHub user IDs, Keybase usernames, cloud account IDs, and details found in any checklists or other documentation maintained by you on the Gruntwork Services. We use this information to provide you with the Services and in accordance with your instructions. If you communicate with our team via chat, email, or telephone or communicate with us or other Gruntwork users through integrated chat interfaces or through a third-party social media platform, we may collect details relating to integrating your chat provider with ours (including URL and admin email address) as well as the contents of your communications which can include any information you choose to include. Likewise, if you chat with other Gruntwork users through our Community Forum or other community chat room, we may collect details relating to the contents of your communications which can include any information you choose to include. If you apply to work with us, we will collect any information you choose to share with us in your application.
 
-### Information We Collect Automatically
+### Information we collect automatically
 
 We also collect information automatically as you navigate our Site, use our Services, or interact with our emails. This can include the following information:
 
@@ -43,7 +41,7 @@ We also collect information automatically as you navigate our Site, use our Serv
 
 Some of this information may be collected using cookies and similar technologies. To learn more about our use of cookies, please see the section entitled “We use cookies and related technologies” below.
 
-### Information We Collect From Other Sources
+### Information we collect from other sources
 
 We may also collect information from third parties, such as our service providers, when they are legally allowed to share your information with us. For instance, we may collect personal data about you from the following sources:
 
