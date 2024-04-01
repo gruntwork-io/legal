@@ -6,12 +6,6 @@
 
 **It’s important to understand these Terms of Service, as they define your rights and our rights in our relationship.** But legalese is not always easy to understand, so we’ve provided “plain English” summaries on the left side of the page to help you understand the official legal language on the right side of the page. Remember that we’re providing you these summaries for informational purposes only. Our actual Terms are the ones on the right under "Legalese" and will apply if we ever need to work through any issues.
 
-[View CHANGELOG](https://gruntwork.io/legal/feed)
-
-## Need to modify these terms?
-
-See [How can I modify these Terms of Service?](https://gruntwork.io/pricing/#how-can-i-modify-your-terms-of-service) in our FAQ.
-
 ## Plain English&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Legalese
 
 |                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
