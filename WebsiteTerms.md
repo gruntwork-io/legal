@@ -6,9 +6,9 @@ BY ACCESSING, USING OR COPYING ANY MATERIALS FROM THE GRUNTWORK SITES, YOU ACKNO
 
 ## 1. The Policies and Agreements
 
-Please review the Gruntwork Privacy Policy, available at https://gruntwork.io/privacy-policy, to understand our practices with regard to how we use your personal data and the Gruntwork Cookie Policy, available at https://www.gruntwork.io/cookie-policy/, to understand our use of cookies and similar technologies (collectively, the “Policies”).
+Please review the Gruntwork Privacy Policy, available at https://gruntwork.io/legal/privacy-policy, to understand our practices with regard to how we use your personal data and the Gruntwork Cookie Policy, available at https://www.gruntwork.io/legal/cookie-policy/, to understand our use of cookies and similar technologies (collectively, the “Policies”).
 
-If you wish to access our Platform or sign-up for any Gruntwork Services that are available for purchase, you will need to complete the registration process to create an Account (defined below) for you and each of your users and agree to our Gruntwork Terms of Service, available at https://gruntwork.io/terms (“Terms of Service”), and/or a Gruntwork Subscription Agreement, or similar agreement governing your use of the Gruntwork Services (“GSA”, and collectively with the Terms of Service, the “Customer Agreement(s)”). In the event of a conflict between these Site Terms and your Customer Agreement, your Customer Agreement controls.
+If you wish to access our Platform or sign-up for any Gruntwork Services that are available for purchase, you will need to complete the registration process to create an Account (defined below) for you and each of your users and agree to our Gruntwork Terms of Service, available at https://gruntwork.io/legal/terms (“Terms of Service”), and/or a Gruntwork Subscription Agreement, or similar agreement governing your use of the Gruntwork Services (“GSA”, and collectively with the Terms of Service, the “Customer Agreement(s)”). In the event of a conflict between these Site Terms and your Customer Agreement, your Customer Agreement controls.
 
 ## 2. Use of the Website
 

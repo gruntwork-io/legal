@@ -8,7 +8,7 @@ A subprocessor is a data processor, engaged by Gruntwork, that stores or transmi
 
 ## Subscribe to Updates to the Subprocessor List
 
-Gruntwork will make updates to the subprocessor list via this website. To subscribe to updates to the subprocessor list, copy the following link into your preferred RSS reader: https://gruntwork.io/legal.rss.
+Gruntwork will make updates to the subprocessor list via this website. To subscribe to updates to the subprocessor list, copy the following link into your preferred RSS reader: https://gruntwork.io/legal/changelog.rss.
 
 ## Customer Data Subprocessors
 
