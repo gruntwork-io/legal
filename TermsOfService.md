@@ -1,15 +1,5 @@
 # Terms of Service
 
-### This page outlines the terms of service and use of Gruntwork’s products and services.
-
-**It’s important to understand these Terms of Service, as they define your rights and our rights in our relationship.** But legalese is not always easy to understand, so we’ve provided “plain English” summaries on the left side of the page to help you understand the official legal language on the right side of the page. Remember that we’re providing you these summaries for informational purposes only. Our actual Terms are the ones on the right under "Legalese" and will apply if we ever need to work through any issues.
-
-### Need to modify these terms?
-
-See [How can I modify these Terms of Service?](https://gruntwork.io/pricing/#how-can-i-modify-your-terms-of-service) in our FAQ.
-
-## Legalese
-
 <!--Plain English:
 By using Gruntwork products and services, you agree to these Terms of Service, our Website Terms, and our Privacy Policy.
 
