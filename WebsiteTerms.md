@@ -1,7 +1,5 @@
 # Website Terms
 
-[View CHANGELOG](https://gruntwork.io/legal/feed)
-
 These Terms and Conditions of Use (the “Site Terms”) govern your (“you” or “your”) access to, and use of, the Gruntwork, Inc. (“Gruntwork,” “we” or “us”) web site located at https://gruntwork.io/, our cloud-based portal located at https://app.gruntwork.io (our “Platform”), and all sub-domain sites (collectively, the “Gruntwork Sites”) and our related content, features, applications, and other services (collectively, such Gruntwork Sites and services, including, without limitation, any new features and applications, the “Service(s)”). The Gruntwork Services, including, without limitation, the Gruntwork Sites, are the property of Gruntwork.
 
 BY ACCESSING, USING OR COPYING ANY MATERIALS FROM THE GRUNTWORK SITES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD AND ACCEPT THESE SITE TERMS AND THE OTHER POLICIES AND AGREEMENTS APPLICABLE TO THE GRUNTWORK SERVICES AS DESCRIBED BELOW. IF YOU DO NOT AGREE WITH (OR CANNOT COMPLY WITH) THESE SITE TERMS, POLICIES AND AGREEMENTS, YOU MAY NOT USE, AND MUST IMMEDIATELY CEASE USING, THE GRUNTWORK SERVICES.
