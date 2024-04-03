@@ -1,9 +1,5 @@
 # Gruntwork Information Security Plan
 
-Owner: Taylor Smith
-Status: Not started
-Created time: September 24, 2020 12:05 PM
-
 ## I. Purpose
 
 This Information Security Policy (“Policy”) sets forth the controls Gruntwork uses to ensure that information collected, stored, managed, or accessed by Gruntwork employees and contractors or through Gruntwork products, applications, or platforms, are adequately protected. By implementing and documenting the controls below, Gruntwork has established a framework to manage risks to the company, ensure compliance with applicable legal and regulatory requirements, and safeguard the company’s information technology, reputation, intellectual property, proprietary information, personal information, and customer data from misuse or compromise.
