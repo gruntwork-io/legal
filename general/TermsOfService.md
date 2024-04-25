@@ -1,5 +1,3 @@
-# Terms of Service
-
 <!--Plain English:
 By using Gruntwork products and services, you agree to these Terms of Service. You must have a Gruntwork Subscription to use any Gruntwork services.
 -->
