@@ -1,5 +1,3 @@
-# Cookie Policy
-
 Gruntwork, Inc. (“Gruntwork”, “we”, “our” and/or “us”) uses cookies and similar technologies when you visit our website, https://gruntwork.io (“the Website”), and use the Gruntwork services, including all associated features and functionalities, websites, user interfaces, and applications (collectively, the “Services”). By using our Services, you agree to our use of cookies.
 
 ## What are cookies?

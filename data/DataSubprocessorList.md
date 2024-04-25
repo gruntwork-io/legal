@@ -1,5 +1,3 @@
-# Subprocessors
-
 Gruntwork uses some data subprocessors to support the delivery of our service.
 
 ## What is a Subprocessor?
