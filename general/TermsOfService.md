@@ -18,31 +18,17 @@ Gruntwork may revise these Terms from time to time. If Gruntwork does revise the
 We've defined some important terms.
 -->
 
-### 1.1. Affiliate
-
 **“Affiliate”** means any person or entity owned or controlled by a party, owning or controlling a party, or under common ownership and control with a party, with “control” meaning the possession, directly or indirectly, of the power to direct or cause the direction of the management and policies of a person, whether through the ownership of voting securities, by contract interest or otherwise. For purposes of this Agreement, the term “Affiliate” does not include your investors or entities controlled by your investors that are not involved in your day-to-day business purpose.
-
-### 1.2. Authorized Users
 
 **“Authorized User”** means your employees, contractors, or Machine Users (as defined below) that are authorized under this Agreement to use the Services on your behalf.
 
-### 1.3. Confidential Information
-
 **“Confidential Information”** means any information or data disclosed by either party that is marked or otherwise designated as confidential or proprietary or that should otherwise be reasonably understood to be confidential in light of the nature of the information and the circumstances surrounding disclosure. However, “Confidential Information” will not include any information which (a) is in the public domain through no fault of receiving party; (b) was properly known to receiving party, without restriction, prior to disclosure by the disclosing party; (c) was properly disclosed to receiving party, without restriction, by another person with the legal authority to do so; or (d) is independently developed by the receiving party without use of or reference to the disclosing party’s Confidential Information.
-
-### 1.4. Documentation
 
 **“Documentation”** means the printed and digital instructions, on-line help files, technical documentation and user manuals made available by Gruntwork for the Services.
 
-### 1.5. Machine User
-
 **“Machine User”** means a user account set up by an individual human who accepts this Agreement on behalf of the user account, provides a valid email address, and is responsible for its actions. A Machine User is used exclusively for performing automated tasks. Multiple users may direct the actions of a Machine User, but the owner of the Machine User is ultimately responsible for the machine's actions.
 
-### 1.6. Order Form
-
 **“Order Form”** means an order form, quote or other similar document that sets forth the specific Services and pricing therefor (including in relation to overages), permitted number of users, licenses, and subscription term, and that references this Agreement and is mutually executed by the parties.
-
-### 1.7. Team
 
 **“Team”** means a unique code repository used to manage infrastructure-as-code for a specific group or project within your organization, intended to represent a single team. Despite potential use by multiple groups, each code repository is considered one Team for the purpose of licensing under this Agreement.
 
@@ -102,6 +88,10 @@ To the extent that, as part of the Services, Gruntwork processes Personal Data o
 
 ### 3.1. Proprietary Rights
 
+<!--Plain English:
+Gruntwork owns all rights to any data we collect regarding performance, availability, or system integrity.
+-->
+
 As between the parties, Gruntwork exclusively owns all right, title and interest in and to the Services, System Data and Gruntwork’s Confidential Information. “System Data” means data collected by Gruntwork regarding the Gruntwork Product that may be used to generate logs, statistics or reports regarding the performance, availability, usage, integrity or security of the Services.
 
 ### 3.2. License Grant
@@ -112,15 +102,7 @@ Your license to our products and services depends on which services you purchase
 
 The scope of your license will depend on the products and features you purchase from Gruntwork as set forth in the applicable Order Form.
 
-#### 3.2.1. License to Subscription Products
-
-<!--Plain English:
-If you purchase a "Subscription Product" (Pipelines, Patcher, Catalog, Runbooks, support services, or access to KodeKloud), these products are provided to you on a subscription basis and you will lose access if you cancel.
--->
-
-The Subscription Products include Gruntwork Pipelines, Gruntwork Patcher, Gruntwork Catalog, Gruntwork Runbooks, support services, and access to KodeKloud and are provided to you as hosted software, self-hosted software, or a pre-built binary. Subject to the terms and conditions of this Agreement, Gruntwork will make the Subscription Products available to you during the term of your applicable Order Form, and hereby grants you a non-exclusive right to access and use the Subscription Products for your business purposes (the “Subscription License”). No other license rights will apply to the Subscription Products. For the avoidance of doubt, the Post-Termination License (set forth in Section 4.4) does not apply to the Subscription License. Unless explicitly stated otherwise in your Order Form, your access and use of the Services are subject to the Subscription License.
-
-#### 3.2.2 License to Library Products
+#### 3.2.1. License to Library Products
 
 <!--Plain English:
 If you purchase a "Library Product" (Library), we give you a broad license to the code for use with your own infrastructure, and per [Section 4.4] you can continue using it even if you cancel. But you can't share the code with another company, resell it, publish it as open source, or try to sub-license it.
@@ -128,7 +110,15 @@ If you purchase a "Library Product" (Library), we give you a broad license to th
 
 The Library Products include Gruntwork Library, which is a collection of infrastructure code created and updated from time to time by Gruntwork, and which is made available via the private git repositories listed at https://www.gruntwork.io/legal/library-repos. Gruntwork hereby grants you a royalty-free, worldwide, non-exclusive, non-transferable (other than as specifically set forth in Section 15 below), non-sublicensable license to use, install, test, execute, perform, and copy the Library Products exclusively for your internal business use, and to create derivative works or otherwise modify the Library Products purely for your internal business purposes (the “Library License”). For the avoidance of doubt, you may not distribute any Library Products to a third-party. Your use of the Library Products is solely for your internal business use only. Additionally, the Library License is granted on a per Authorized User basis, and you must purchase and maintain a valid license for each Authorized User who accesses the Library Products. The Library License is only granted to you if your applicable Order Form explicitly includes reference to a Library Product.
 
-### 3.4. Professional Services
+#### 3.2.2. License to Subscription Products
+
+<!--Plain English:
+If you purchase a "Subscription Product" (Gruntwork Pipelines, Gruntwork Patcher, Gruntwork Catalog, Gruntwork Runbooks, support services, or access to KodeKloud), these products are provided to you on a subscription basis and you will lose access if you cancel.
+-->
+
+The Subscription Products include Gruntwork Pipelines, Gruntwork Patcher, Gruntwork Catalog, Gruntwork Runbooks, support services, and access to KodeKloud and are provided to you as hosted software, self-hosted software, or a pre-built binary. Subject to the terms and conditions of this Agreement, Gruntwork will make the Subscription Products available to you during the term of your applicable Order Form, and hereby grants you a non-exclusive right to access and use the Subscription Products for your business purposes (the “Subscription License”). No other license rights will apply to the Subscription Products. For the avoidance of doubt, the Post-Termination License (set forth in Section 4.4) does not apply to the Subscription License. Unless explicitly stated otherwise in your Order Form, your access and use of the Services are subject to the Subscription License.
+
+### 3.3. Professional Services
 
 <!--Plain English:
 We can optionally provide you with Professional Services to help you with the Gruntwork services.
@@ -136,7 +126,7 @@ We can optionally provide you with Professional Services to help you with the Gr
 
 In connection with providing you the Services, Gruntwork may offer initial configuration assistance, Customer training, migration or other professional services that Gruntwork furnishes to Customer related to the Services (the “Professional Services”). If applicable, Gruntwork will use commercially reasonable efforts to (1) perform Professional Services and (2) deliver any deliverables in conformance with Gruntwork's provision of the Professional Services. Customer will give Gruntwork timely access to customer materials reasonably needed for Professional Services and/or the deliverables, and Gruntwork will use the customer materials only for purposes of providing Professional Services. Except as set forth otherwise and further described in a statement of work (“SOW”), (A) as between the parties, Gruntwork shall solely and exclusively own all right, title, interest in the Professional Services and (B) to the extent Gruntwork creates any work product or code on behalf of Customer in furtherance of the Professional Services (the “Deliverables”), and subject to the restriction set forth in Section 7.2(c), Gruntwork grants Customer a non-exclusive, perpetual license to use the Deliverables created from the Professional Services.
 
-### 3.5 Customer Contributions to Gruntwork
+### 3.4 Customer Contributions to Gruntwork
 
 <!--Plain English:
 Any modifications you make to our code in your own code repos are your intellectual property and Gruntwork will not have any rights to it.
@@ -146,19 +136,19 @@ However, if you find a bug in our code or see an opportunity for an improvement 
 
 Nothing in this Agreement requires you to contribute to the Services; however, if you choose to contribute any intellectual property via a submission to a Gruntwork source code repository (for example, via a GitHub pull request), Gruntwork will own such contribution (“Gruntwork-Owned Contribution”). You warrant that Gruntwork-Owned Contributions do not include any of your Confidential Information (as defined in Section 7), and you hereby assign to Gruntwork all rights in the Gruntwork-Owned Contribution, including, without limitation, all copyrights, patent rights, trade secret rights, trademark rights, moral rights, and other intellectual property rights to and in the Services in the United States and all other countries, including the right to pursue patents, utility models, or industrial design applications in the United States and all other countries, and will do everything reasonably possible (when requested by Gruntwork, and at Gruntwork’s expense) to carry out in good faith the intent of this clause. Nothing in this Agreement requires you to provide access to Gruntwork to your source code repository, unless otherwise expressly required under the Agreement of a specific Service that you have utilized.
 
-### 3.6. License to Customer Information
+### 3.5. License to Customer Information
 
 You grant Gruntwork a worldwide, non-exclusive license to host, copy, process, transmit, and display information, data, and other content provided or submitted by you or your Authorized Users to or through the Services (and modification and derivatives thereof) (collectively, “Customer Information”) solely for the purpose of Gruntwork providing the Services to you in accordance with this Agreement.
 
-### 3.7. Gruntwork Use of Open Source Software
+### 3.6. Gruntwork Use of Open Source Software
 
 <!--Plain English:
-Some of the code in our library contains open source tools that use a “copyleft” license like GPL (e.g. wget). We won’t modify these tools in such a way that we trigger a “viral” obligation that requires our code (or your derivative works from our code) to be released as GPL. We’ll always comply with Gruntwork’s Open Source Usage Policy when using open source software.
+Some of the code in our library contains open source tools that use a “copyleft” license like GPL (e.g. `wget`). We won’t modify these tools in such a way that we trigger a “viral” obligation that requires our code (or your derivative works from our code) to be released as GPL. We’ll always comply with Gruntwork’s Open Source Usage Policy when using open source software.
 -->
 
 You acknowledge that from time to time Gruntwork may utilize third-party software, such as publicly-distributed software (e.g., third-party software commonly known as “free software” or “open source software” subject to one or more third-party license agreements), or other third-party documentation and information in connection with providing the Library Products. Gruntwork may incorporate such third-party software into the Library Products or make use of such third-party software in the Library Products. If the third-party software uses a GPL, LGPL, or MPL license, Gruntwork will ensure the use of that third-party software in the Library Products does not trigger GPL, LGPL, or MPL obligations commonly referred to as “viral” obligations. Gruntwork will at all times use such third-party software only in accordance with Gruntwork’s Open Source Usage Policy located at https://gruntwork.io/open-source-policy, which may be updated from time to time but at all times will meet industry standards.
 
-### 3.8. Your Use of Open Source Software
+### 3.7. Your Use of Open Source Software
 
 <!--Plain English:
 Gruntwork has made a commitment not to modify any open source code in a way that triggers a “viral” obligation.
@@ -168,7 +158,7 @@ Here, we ask you to do the same. In practice, this means that if you modify our 
 
 You also acknowledge that, under the terms of the Library License granted herein, you agree not to distribute the Library Products or any derivative of the Library Products in any way and, as such, acknowledge and agree that you will not “convey” any Library Products or derivative of the Library Products in a manner that would trigger GPL, LGPL, or MPL obligations commonly referred to as “viral” obligations. In the event you produce any derivative work from any portion of the Library Products, or otherwise modify the Library Products, you shall be solely responsible for ensuring that such derivatives or modifications comply with the terms of the licenses to any third-party software incorporated into the Library Products.
 
-### 3.9. Feedback
+### 3.8. Feedback
 
 <!--Plain English:
 If you give us a great idea, we get to use it and share it!
@@ -201,12 +191,14 @@ If, at any time, any of the Services or the Agreement (or any portion hereof) ar
 ### 4.4. Post-Termination Library License
 
 <!--Plain English:
-If you stick with the annual subscription for at least one year, even if you cancel, you can keep using all the Library Product code you had access to at the time of cancellation at no additional cost.
+If you purchase a Library buyout option (or if you signed up on or before May 2, 2024), even if you cancel, you can keep using all the Library Product code you had access to at the time of cancellation at no additional cost.
 
 We recommend that before termination, you clone any Gruntwork repos and update your infrastructure code to remove all references to private Gruntwork repos.
 -->
 
-If, at any time, all or any portion of the Agreement or your Services are terminated (other than by Gruntwork for cause), the Library License will remain in effect for all of your forks of the Library Products source code repositories as of the termination date. Gruntwork recommends that, prior to the termination date, you fork any Gruntwork source code repositories and update your infrastructure code to remove all references to any private Gruntwork source code repositories. Notwithstanding the foregoing, the Library License set forth in this Section 4.4 is only valid to Customers who have purchased (and paid for) at least one consecutive year of the applicable Library Products from Gruntwork .
+If, at any time, all or any portion of the Agreement or your Services are terminated (other than by Gruntwork for cause), the Library License will remain in effect for all of your forks of the Library Products source code repositories as of the termination date. Gruntwork recommends that, prior to the termination date, you fork any Gruntwork source code repositories and update your infrastructure code to remove all references to any private Gruntwork source code repositories.
+
+Notwithstanding the foregoing, the Library License set forth in this Section 4.4 is only valid to Customers who have purchased (and paid for) a perpetual usage right to the Library Products from Gruntwork, or to customers who purchased Gruntwork on or before May 2, 2024. 
 
 ## 5. Compensation and Invoicing
 
