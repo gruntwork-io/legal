@@ -18,17 +18,31 @@ Gruntwork may revise these Terms from time to time. If Gruntwork does revise the
 We've defined some important terms.
 -->
 
+### 1.1. Affiliate
+
 **“Affiliate”** means any person or entity owned or controlled by a party, owning or controlling a party, or under common ownership and control with a party, with “control” meaning the possession, directly or indirectly, of the power to direct or cause the direction of the management and policies of a person, whether through the ownership of voting securities, by contract interest or otherwise. For purposes of this Agreement, the term “Affiliate” does not include your investors or entities controlled by your investors that are not involved in your day-to-day business purpose.
+
+### 1.2. Authorized Users
 
 **“Authorized User”** means your employees, contractors, or Machine Users (as defined below) that are authorized under this Agreement to use the Services on your behalf.
 
+### 1.3. Confidential Information
+
 **“Confidential Information”** means any information or data disclosed by either party that is marked or otherwise designated as confidential or proprietary or that should otherwise be reasonably understood to be confidential in light of the nature of the information and the circumstances surrounding disclosure. However, “Confidential Information” will not include any information which (a) is in the public domain through no fault of receiving party; (b) was properly known to receiving party, without restriction, prior to disclosure by the disclosing party; (c) was properly disclosed to receiving party, without restriction, by another person with the legal authority to do so; or (d) is independently developed by the receiving party without use of or reference to the disclosing party’s Confidential Information.
+
+### 1.4. Documentation
 
 **“Documentation”** means the printed and digital instructions, on-line help files, technical documentation and user manuals made available by Gruntwork for the Services.
 
+### 1.5. Machine User
+
 **“Machine User”** means a user account set up by an individual human who accepts this Agreement on behalf of the user account, provides a valid email address, and is responsible for its actions. A Machine User is used exclusively for performing automated tasks. Multiple users may direct the actions of a Machine User, but the owner of the Machine User is ultimately responsible for the machine's actions.
 
+### 1.6. Order Form
+
 **“Order Form”** means an order form, quote or other similar document that sets forth the specific Services and pricing therefor (including in relation to overages), permitted number of users, licenses, and subscription term, and that references this Agreement and is mutually executed by the parties.
+
+### 1.7. Team
 
 **“Team”** means a unique code repository used to manage infrastructure-as-code for a specific group or project within your organization, intended to represent a single team. Despite potential use by multiple groups, each code repository is considered one Team for the purpose of licensing under this Agreement.
 
