@@ -1,18 +1,12 @@
-## Exhibit A
-
-## Service Level Agreement
-
 **Ticket-based Support.** Named Support Users may submit support requests by emailing support@gruntwork.io or by using online helpdesk software specified by Gruntwork.
 
 **Chat-based Support.** Named Support Users may optionally submit support requests via a shared channel on a chat system such as Slack, which shall be private to you and Gruntwork and not accessible by other Gruntwork customers.
 
 **Service Level Agreement.** Gruntwork shall make a good-faith effort to respond to support request as soon as possible, but for the first 3 requests per day or first 15 requests per month, whichever occurs first, Gruntwork shall respond no later than:
 
-> If you purchased a 2-day SLA - Two business days after the support request was received by Gruntwork
-
-> If you purchased a next-day SLA - The next business day after the support request was received by Gruntwork
-
-> If you purchased a same-day SLA - Four business hours after the support request was received by Gruntwork, unless the request was received after 2:00pm Pacific Time, in which case Gruntwork will respond no later than 10:00am Pacific Time.
+- If you purchased a 2-day SLA - Two business days after the support request was received by Gruntwork
+- If you purchased a next-day SLA - The next business day after the support request was received by Gruntwork
+- If you purchased a same-day SLA - Four business hours after the support request was received by Gruntwork, unless the request was received after 2:00pm Pacific Time, in which case Gruntwork will respond no later than 10:00am Pacific Time.
 
 All responses are subject to our availability the provisions below.
 
