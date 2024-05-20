@@ -98,6 +98,38 @@ Gruntwork has implemented and will maintain appropriate technical and organizati
 
 To the extent that, as part of the Services, Gruntwork processes Personal Data on Customer’s behalf, the terms of the Gruntwork Data Processing Agreement (currently located at https://gruntwork.io/legal/dpa), which are incorporated into and form a part of this Agreement, will apply to such processing.
 
+### 2.5. Support
+
+<!--Plain English:
+Check out the support plans we offer! Note that we support our own products, but we don't offer general-purpose DevOps support or support for third-party products.
+-->
+
+Gruntwork will provide support for basic Terragrunt questions, bug fixes and general support for all Gruntwork products. Gruntwork will not be responsible for supporting issues that do not directly relate to the Services, such as general purpose DevOps technical support, or support for third-party solutions.
+
+Gruntwork will deliver one of the following support levels, as set forth in the applicable Order Form. 
+
+#### 2.5.1 Community Support
+
+Community Support includes:
+
+- **Support via Knowledge Base:** Access to our online repository of questions and answers from Gruntwork personnel.
+- **Support via Community Slack:** Participation in our customer-only Slack channel that includes informal support and interaction with other Gruntwork users.
+- **Support via Email:** Direct email support for personalized assistance.
+- **Named Technical Contacts:** The specified number of designated technical contacts within your organization may submit support requests via email.
+- **No SLA.** Community support does not include a service level agreement; Gruntwork personnel will respond on a best-effort basis.
+
+#### 2.5.2 Startup Support
+
+Startup Support includes all features of Community Support, plus:
+
+- **Support Service Level Agreement (SLA):** Response times to support inquiries according to the SLA set forth in the applicable Order Form.
+
+#### 2.5.3 Enterprise Support
+
+Enterprise Support includes all features of Startup Support, plus:
+
+- **Support via Private Slack:** Request support in a Slack channel private to your Slack workspace and shared with the Gruntwork Slack workspace. 
+
 ## 3. Intellectual Property Rights
 
 ### 3.1. Proprietary Rights
