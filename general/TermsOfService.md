@@ -224,7 +224,7 @@ Note that prior to May 2, 2024, these terms of service specified an initial and 
 
 The term of this Agreement will become effective on the date these Terms are accepted by you and continue until your account is terminated as set forth below.. Except as set forth in an Order Form, the term of your Agreement will automatically renew for successive renewal terms equal to the length of the initial term, unless either party provides the other party with written notice of non-renewal at least fifteen (15) days prior to the end of the then-current term (each, a “Renewal Term”).
 
-Notwithstanding the foregoing, except as set forth in an Order Form, for customers who purchased Gruntwork on or before May 2, 2024, the initial term length and Renewal Term is twelve (12) months. 
+Notwithstanding the foregoing, except as set forth in an Order Form, for customers who entered into an Agreement with Gruntwork on or before May 2, 2024, the initial term length of such Agreement and each Renewal Term thereof is twelve (12) months. 
 
 ### 4.2. Termination
 
