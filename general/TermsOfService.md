@@ -218,7 +218,6 @@ You hereby grant Gruntwork a royalty-free, worldwide, transferable, sublicensabl
 
 <!--Plain English:
 Your use of the services requires a subscription. Your subscription will automatically renew for successive terms unless you tell us otherwise at least 15 days before it renews.
-
 Note that prior to May 2, 2024, these terms of service specified an initial and renewal term of 12 months.
 -->
 
@@ -242,7 +241,6 @@ If, at any time, any of the Services or the Agreement (or any portion hereof) ar
 
 <!--Plain English:
 If you purchase a Library buyout option (or if you signed up on or before May 2, 2024), even if you cancel, you can keep using all the Library Product code you had access to at the time of cancellation at no additional cost.
-
 We recommend that before termination, you clone any Gruntwork repos and update your infrastructure code to remove all references to private Gruntwork repos.
 -->
 
