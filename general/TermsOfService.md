@@ -78,7 +78,6 @@ Customer will (i) be responsible for all use of the Services under its account, 
 
 <!--Plain English:
 Both you and your affiliates can use Gruntwork.
-
 An Authorized User is a human or machine that you designate to use our services.
 -->
 
@@ -176,7 +175,6 @@ In connection with providing you the Services, Gruntwork may offer initial confi
 
 <!--Plain English:
 Any modifications you make to our code in your own code repos are your intellectual property and Gruntwork will not have any rights to it.
-
 However, if you find a bug in our code or see an opportunity for an improvement and you decide to contribute some code back to us via a GitHub pull request, we’ll want to share that code with all our customers, so we’ll own the code you submit. If you don't want us to own the code, just don't contribute it our repos.
 -->
 
@@ -198,7 +196,6 @@ You acknowledge that from time to time Gruntwork may utilize third-party softwar
 
 <!--Plain English:
 Gruntwork has made a commitment not to modify any open source code in a way that triggers a “viral” obligation.
-
 Here, we ask you to do the same. In practice, this means that if you modify our code, you can’t modify any GPL code that we distribute with the code. For example, we use `wget` in many of our bash scripts. If you need to make a change to how we use `wget`, don’t modify `wget` itself because the GPL license on `wget` will then require that all the code that uses `wget` be made GPL as well.
 -->
 
@@ -218,7 +215,6 @@ You hereby grant Gruntwork a royalty-free, worldwide, transferable, sublicensabl
 
 <!--Plain English:
 Your use of the services requires a subscription. Your subscription will automatically renew for successive terms unless you tell us otherwise at least 15 days before it renews.
-
 Note that prior to May 2, 2024, these terms of service specified an initial and renewal term of 12 months.
 -->
 
@@ -242,7 +238,6 @@ If, at any time, any of the Services or the Agreement (or any portion hereof) ar
 
 <!--Plain English:
 If you purchase a Library buyout option (or if you signed up on or before May 2, 2024), even if you cancel, you can keep using all the Library Product code you had access to at the time of cancellation at no additional cost.
-
 We recommend that before termination, you clone any Gruntwork repos and update your infrastructure code to remove all references to private Gruntwork repos.
 -->
 
