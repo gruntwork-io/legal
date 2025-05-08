@@ -1,0 +1,34 @@
+name: Sync Legal Pages to Webflow
+
+on:
+  push:
+    branches:
+      - main # Or your default branch
+      - cicd
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a recent LTS version
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./scripts
+
+      - name: Run Webflow Sync Script
+        run: node scripts/sync-legal-pages.js
+        env:
+          WEBFLOW_API_KEY: ${{ secrets.WEBFLOW_API_KEY }}
+          WEBFLOW_SITE_ID: ${{ secrets.WEBFLOW_SITE_ID }}
+          WEBFLOW_COLLECTION_ID: ${{ secrets.WEBFLOW_LEGAL_COLLECTION_ID }}
