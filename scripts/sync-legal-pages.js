@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
+const { glob } = require('glob');
 const MarkdownIt = require('markdown-it');
 const axios = require('axios');
 
@@ -48,115 +48,115 @@ function findMdFiles(rootDir) {
 
 // Function to extract title (first H1 or H2)
 function extractTitle(markdownContent) {
-    const match = markdownContent.match(/^#{1,2}\s+(.*)/m);
-    return match ? match[1].trim() : 'Untitled Legal Page'; // Default title if no H1/H2 found
+  const match = markdownContent.match(/^#{1,2}\s+(.*)/m);
+  return match ? match[1].trim() : 'Untitled Legal Page'; // Default title if no H1/H2 found
 }
 
 // Function to generate a simple slug from a file path
 function generateSlug(filePath) {
-    // Remove extension, make lowercase, replace slashes/spaces with hyphens
-    let slug = filePath
-        .replace(/\.md$/, '')
-        .toLowerCase()
-        .replace(/[\/\s_]+/g, '-') // Replace slashes, spaces, underscores with hyphens
-        .replace(/^-+|-+$/g, '');  // Remove leading/trailing hyphens
-    if (slug === '') { // Handle case where path is just '/' or similar
-        slug = 'index'; // Or some other default
-    }
-    return slug;
+  // Remove extension, make lowercase, replace slashes/spaces with hyphens
+  let slug = filePath
+    .replace(/\.md$/, '')
+    .toLowerCase()
+    .replace(/[\/\s_]+/g, '-') // Replace slashes, spaces, underscores with hyphens
+    .replace(/^-+|-+$/g, '');  // Remove leading/trailing hyphens
+  if (slug === '') { // Handle case where path is just '/' or similar
+    slug = 'index'; // Or some other default
+  }
+  return slug;
 }
 
 
 // Function to get existing items by path from Webflow
 async function getWebflowItemsByPath(collectionId) {
-    console.log(`Workspaceing existing items from Webflow collection ${collectionId}...`);
-    const itemsMap = new Map(); // Map of repoPath -> Webflow Item ID
-    let offset = 0;
-    const limit = 100; // Max items per request
+  console.log(`Workspaceing existing items from Webflow collection ${collectionId}...`);
+  const itemsMap = new Map(); // Map of repoPath -> Webflow Item ID
+  let offset = 0;
+  const limit = 100; // Max items per request
 
-    try {
-        while (true) {
-            // Note: Webflow API filtering might be limited or require the exact field ID.
-            // A simpler approach for a collection of reasonable size is to fetch all and filter client-side.
-            // If your collection is very large, you might need to adjust or look for specific Webflow filter capabilities.
-            const response = await webflow.get(`/collections/${collectionId}/items`, {
-                params: {
-                    offset: offset,
-                    limit: limit
-                }
-            });
-
-            if (response.data && Array.isArray(response.data.items)) {
-                response.data.items.forEach(item => {
-                    // Assuming the 'path' field exists and is reliable as a unique key
-                    if (item.fieldData && item.fieldData[FIELD_ID_PATH]) {
-                        itemsMap.set(item.fieldData[FIELD_ID_PATH], item._id);
-                    }
-                });
-
-                if (response.data.items.length < limit) {
-                    // Less than limit items returned, means we've reached the end
-                    break;
-                }
-                offset += limit; // Prepare for next page
-            } else {
-                console.warn("Unexpected response structure when fetching items:", response.data);
-                break; // Exit loop on unexpected structure
-            }
+  try {
+    while (true) {
+      // Note: Webflow API filtering might be limited or require the exact field ID.
+      // A simpler approach for a collection of reasonable size is to fetch all and filter client-side.
+      // If your collection is very large, you might need to adjust or look for specific Webflow filter capabilities.
+      const response = await webflow.get(`/collections/${collectionId}/items`, {
+        params: {
+          offset: offset,
+          limit: limit
         }
-        console.log(`Workspaceed ${itemsMap.size} existing items.`);
-        return itemsMap;
+      });
 
-    } catch (error) {
-        console.error("Error fetching existing Webflow items:", error.message);
-        if (error.response) {
-            console.error("Response data:", error.response.data);
-            console.error("Response status:", error.response.status);
+      if (response.data && Array.isArray(response.data.items)) {
+        response.data.items.forEach(item => {
+          // Assuming the 'path' field exists and is reliable as a unique key
+          if (item.fieldData && item.fieldData[FIELD_ID_PATH]) {
+            itemsMap.set(item.fieldData[FIELD_ID_PATH], item._id);
+          }
+        });
+
+        if (response.data.items.length < limit) {
+          // Less than limit items returned, means we've reached the end
+          break;
         }
-        throw error; // Re-throw to stop the process
+        offset += limit; // Prepare for next page
+      } else {
+        console.warn("Unexpected response structure when fetching items:", response.data);
+        break; // Exit loop on unexpected structure
+      }
     }
+    console.log(`Workspaceed ${itemsMap.size} existing items.`);
+    return itemsMap;
+
+  } catch (error) {
+    console.error("Error fetching existing Webflow items:", error.message);
+    if (error.response) {
+      console.error("Response data:", error.response.data);
+      console.error("Response status:", error.response.status);
+    }
+    throw error; // Re-throw to stop the process
+  }
 }
 
 
 // Function to create or update item in Webflow
 async function syncItem(repoPath, mdContent, htmlContent, title, existingItemsMap) {
-    const slug = generateSlug(repoPath);
-    const existingItemId = existingItemsMap.get(repoPath);
+  const slug = generateSlug(repoPath);
+  const existingItemId = existingItemsMap.get(repoPath);
 
-    const itemData = {
-        isArchived: false,
-        isDraft: false,
-        fieldData: {
-            [FIELD_ID_TITLE]: title,
-            [FIELD_ID_SLUG]: slug,
-            [FIELD_ID_PATH]: repoPath, // Store the original repository path
-            [FIELD_ID_HTML_CONTENT]: htmlContent,
-            [FIELD_ID_MD_CONTENT]: mdContent,
-            // Add other required fields here if any, e.g., 'live': true
-        },
-    };
+  const itemData = {
+    isArchived: false,
+    isDraft: false,
+    fieldData: {
+      [FIELD_ID_TITLE]: title,
+      [FIELD_ID_SLUG]: slug,
+      [FIELD_ID_PATH]: repoPath, // Store the original repository path
+      [FIELD_ID_HTML_CONTENT]: htmlContent,
+      [FIELD_ID_MD_CONTENT]: mdContent,
+      // Add other required fields here if any, e.g., 'live': true
+    },
+  };
 
-    try {
-        if (existingItemId) {
-            // Update existing item
-            console.log(`Updating item for path: ${repoPath} (Webflow ID: ${existingItemId})`);
-            await webflow.put(`/collections/${WEBFLOW_COLLECTION_ID}/items/${existingItemId}`, itemData);
-            console.log(`Successfully updated item for path: ${repoPath}`);
-        } else {
-            // Create new item
-            console.log(`Creating new item for path: ${repoPath}`);
-            await webflow.post(`/collections/${WEBFLOW_COLLECTION_ID}/items`, itemData);
-            console.log(`Successfully created item for path: ${repoPath}`);
-        }
-    } catch (error) {
-         console.error(`Error syncing item for path: ${repoPath}`, error.message);
-         if (error.response) {
-             console.error("Response data:", error.response.data);
-             console.error("Response status:", error.response.status);
-         }
-         // Decide if you want to throw here or continue with other files
-         // throw error;
+  try {
+    if (existingItemId) {
+      // Update existing item
+      console.log(`Updating item for path: ${repoPath} (Webflow ID: ${existingItemId})`);
+      await webflow.put(`/collections/${WEBFLOW_COLLECTION_ID}/items/${existingItemId}`, itemData);
+      console.log(`Successfully updated item for path: ${repoPath}`);
+    } else {
+      // Create new item
+      console.log(`Creating new item for path: ${repoPath}`);
+      await webflow.post(`/collections/${WEBFLOW_COLLECTION_ID}/items`, itemData);
+      console.log(`Successfully created item for path: ${repoPath}`);
     }
+  } catch (error) {
+    console.error(`Error syncing item for path: ${repoPath}`, error.message);
+    if (error.response) {
+      console.error("Response data:", error.response.data);
+      console.error("Response status:", error.response.status);
+    }
+    // Decide if you want to throw here or continue with other files
+    // throw error;
+  }
 }
 
 // Main sync function
