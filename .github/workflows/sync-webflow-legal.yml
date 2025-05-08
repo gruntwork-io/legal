@@ -1,0 +1,43 @@
+name: Sync Legal Pages to Webflow
+
+on:
+  push:
+    branches:
+      - main # Or your default branch
+      - cicd
+    paths:
+      - '**/*.md' # Trigger only when .md files change
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a recent LTS version
+
+      - name: Install Dependencies
+        run: npm install markdown-it axios glob
+
+      - name: Run Webflow Sync Script
+        run: node scripts/sync-legal-pages.js
+        env:
+          WEBFLOW_API_KEY: ${{ secrets.WEBFLOW_API_KEY }}
+          WEBFLOW_SITE_ID: ${{ secrets.WEBFLOW_SITE_ID }}
+          WEBFLOW_COLLECTION_ID: ${{ secrets.WEBFLOW_LEGAL_COLLECTION_ID }}
+          # --- IMPORTANT ---
+          # Set these environment variables to the *API names* of your fields in Webflow
+          # Find these in your Webflow project settings under "API & Integrations" -> Collections -> Legal Pages
+          WEBFLOW_TITLE_FIELD_ID: "title" 
+          WEBFLOW_SLUG_FIELD_ID: "slug"
+          WEBFLOW_PATH_FIELD_ID: "path"
+          WEBFLOW_HTML_FIELD_ID: "html-content"
+          WEBFLOW_MD_FIELD_ID: "md-content"          
