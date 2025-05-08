@@ -23,7 +23,8 @@ jobs:
           node-version: '20' # Use a recent LTS version
 
       - name: Install Dependencies
-        run: npm install markdown-it axios glob
+        run: npm install
+        working-directory: ./scripts
 
       - name: Run Webflow Sync Script
         run: node scripts/sync-legal-pages.js
