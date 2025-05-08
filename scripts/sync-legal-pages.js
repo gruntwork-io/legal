@@ -2,13 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const { glob } = require('glob');
 const MarkdownIt = require('markdown-it');
-const axios = require('axios');
+const { WebflowClient } = require("webflow-api");
+
 
 // --- Configuration ---
 const WEBFLOW_API_KEY = process.env.WEBFLOW_API_KEY;
 const WEBFLOW_SITE_ID = process.env.WEBFLOW_SITE_ID;
 const WEBFLOW_COLLECTION_ID = process.env.WEBFLOW_COLLECTION_ID;
-const DEBUG = process.env.DEBUG === 'true';
+const DEBUG = process.env.DEBUG !== 'false';
 
 // --- Logging utilities ---
 function log(message) {
@@ -24,13 +25,11 @@ function debugLog(message) {
 // --- IMPORTANT ---
 // Set these to the *API names* of your fields in Webflow's "legal pages" collection.
 // Find these in your Webflow project settings under "API & Integrations" -> Collections -> Legal Pages
-const FIELD_ID_TITLE = process.env.WEBFLOW_TITLE_FIELD_ID;
-const FIELD_ID_SLUG = process.env.WEBFLOW_SLUG_FIELD_ID;
-const FIELD_ID_PATH = process.env.WEBFLOW_PATH_FIELD_ID;
-const FIELD_ID_HTML_CONTENT = process.env.WEBFLOW_HTML_FIELD_ID;
-const FIELD_ID_MD_CONTENT = process.env.WEBFLOW_MD_FIELD_ID;
-
-const WEBFLOW_API_BASE = 'https://api.webflow.com';
+const FIELD_ID_TITLE = process.env.WEBFLOW_TITLE_FIELD_ID || 'name';
+const FIELD_ID_SLUG = process.env.WEBFLOW_SLUG_FIELD_ID || 'slug';
+const FIELD_ID_PATH = process.env.WEBFLOW_PATH_FIELD_ID || 'path';
+const FIELD_ID_HTML_CONTENT = process.env.WEBFLOW_HTML_FIELD_ID || 'html-content';
+const FIELD_ID_MD_CONTENT = process.env.WEBFLOW_MD_FIELD_ID || 'markdown-content';
 
 debugLog('Environment configuration loaded');
 debugLog(`WEBFLOW_SITE_ID: ${WEBFLOW_SITE_ID}`);
@@ -38,43 +37,45 @@ debugLog(`WEBFLOW_COLLECTION_ID: ${WEBFLOW_COLLECTION_ID}`);
 
 const md = new MarkdownIt();
 
-const webflow = axios.create({
-  baseURL: WEBFLOW_API_BASE,
-  headers: {
-    'Authorization': `Bearer ${WEBFLOW_API_KEY}`,
-    'accept': 'application/json',
-    'content-type': 'application/json',
-    'accept-version': '1.0.0',
-  },
-});
+// Initialize the Webflow client
+const webflow = new WebflowClient({ accessToken: WEBFLOW_API_KEY });
+
 debugLog('Webflow API client initialized');
 
 // Function to find all markdown files
-function findMdFiles(rootDir) {
+async function findMdFiles(rootDir) {
   debugLog(`Searching for markdown files in: ${rootDir}`);
-  return new Promise((resolve, reject) => {
-    // Find all .md files, excluding those in .git or node_modules
-    glob('**/*.md', { ignore: ['.git/**', 'node_modules/**'], cwd: rootDir }, (err, files) => {
-      if (err) {
-        reject(err);
-      } else {
-        debugLog(`Found ${files.length} markdown files`);
-        if (DEBUG && files.length > 0) {
-          debugLog(`First few files: ${files.slice(0, 3).join(', ')}${files.length > 3 ? '...' : ''}`);
-        }
-        resolve(files);
-      }
-    });
-  });
+  const files = await glob('../**/*.md', { ignore: ['.git/**', 'node_modules/**'], cwd: rootDir });
+  debugLog(`Found ${files.length} markdown files`);
+  return files;
 }
 
-// Function to extract title (first H1 or H2)
-function extractTitle(markdownContent) {
-  debugLog('Extracting title from markdown content');
-  const match = markdownContent.match(/^#{1,2}\s+(.*)/m);
-  const title = match ? match[1].trim() : 'Untitled Legal Page';
-  debugLog(`Extracted title: "${title}"`);
-  return title;
+// Function to extract title from filename in Title Case with spaces
+function extractTitle(filePath) {
+  debugLog(`Extracting title from filename: ${filePath}`);
+
+  // Get the basename without extension
+  const basename = path.basename(filePath, '.md');
+
+  // Replace hyphens and underscores with spaces
+  let spacedName = basename.replace(/[-_]/g, ' ');
+
+  // Handle camelCase by inserting spaces before capital letters
+  // This regex looks for a lowercase letter followed by an uppercase letter
+  // and puts a space between them
+  spacedName = spacedName.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+  // Title case (capitalize first letter of each word)
+  const titleCased = spacedName
+    .split(' ')
+    .map(word => {
+      if (!word) return '';
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(' ');
+
+  debugLog(`Generated title: "${titleCased}"`);
+  return titleCased;
 }
 
 // Function to generate a simple slug from a file path
@@ -83,6 +84,7 @@ function generateSlug(filePath) {
   // Remove extension, make lowercase, replace slashes/spaces with hyphens
   let slug = filePath
     .replace(/\.md$/, '')
+    .replace('..', '')
     .toLowerCase()
     .replace(/[\/\s_]+/g, '-') // Replace slashes, spaces, underscores with hyphens
     .replace(/^-+|-+$/g, '');  // Remove leading/trailing hyphens
@@ -93,7 +95,6 @@ function generateSlug(filePath) {
   return slug;
 }
 
-
 // Function to get existing items by path from Webflow
 async function getWebflowItemsByPath(collectionId) {
   log(`Fetching existing items from Webflow collection ${collectionId}...`);
@@ -102,44 +103,43 @@ async function getWebflowItemsByPath(collectionId) {
   const limit = 100; // Max items per request
 
   try {
-    while (true) {
-      debugLog(`Fetching items batch - offset: ${offset}, limit: ${limit}`);
-      // Note: Webflow API filtering might be limited or require the exact field ID.
-      // A simpler approach for a collection of reasonable size is to fetch all and filter client-side.
-      // If your collection is very large, you might need to adjust or look for specific Webflow filter capabilities.
-      const response = await webflow.get(`/collections/${collectionId}/items`, {
-        params: {
-          offset: offset,
-          limit: limit
-        }
-      });
+    let hasMoreItems = true;
 
-      if (response.data && Array.isArray(response.data.items)) {
-        debugLog(`Received ${response.data.items.length} items in batch`);
-        response.data.items.forEach(item => {
-          // Assuming the 'path' field exists and is reliable as a unique key
-          if (item.fieldData && item.fieldData[FIELD_ID_PATH]) {
+    while (hasMoreItems) {
+      debugLog(`Fetching items batch - offset: ${offset}, limit: ${limit}`);
+
+      // Fetch collection items with pagination
+      const response = await webflow.collections.items.listItems(collectionId, { limit, offset });
+
+      if (response && Array.isArray(response.items)) {
+        const items = response.items;
+        debugLog(`Received ${items.length} items in batch`);
+
+        items.forEach(item => {
+          if (item && item.fieldData[FIELD_ID_PATH]) {
             const path = item.fieldData[FIELD_ID_PATH];
-            itemsMap.set(path, item._id);
-            debugLog(`Mapped path "${path}" to ID "${item._id}"`);
+            itemsMap.set(path, item.id);
+            debugLog(`Mapped path "${path}" to ID "${item.id}"`);
           } else {
-            debugLog(`Item missing path field: ${JSON.stringify(item._id)}`);
+            debugLog(`Item missing path field: ${JSON.stringify(item.id)}`);
           }
         });
 
-        if (response.data.items.length < limit) {
+        if (items.length < limit) {
           // Less than limit items returned, means we've reached the end
           debugLog('Reached end of items list (received less than limit)');
-          break;
+          hasMoreItems = false;
+        } else {
+          offset += limit; // Prepare for next page
+          debugLog(`Moving to next page, new offset: ${offset}`);
         }
-        offset += limit; // Prepare for next page
-        debugLog(`Moving to next page, new offset: ${offset}`);
       } else {
-        console.warn("Unexpected response structure when fetching items:", response.data);
-        debugLog(`Unexpected response structure: ${JSON.stringify(response.data)}`);
-        break; // Exit loop on unexpected structure
+        console.warn("Unexpected response structure when fetching items:", response);
+        debugLog(`Unexpected response structure: ${JSON.stringify(response)}`);
+        hasMoreItems = false;
       }
     }
+
     log(`Fetched ${itemsMap.size} existing items.`);
     return itemsMap;
 
@@ -147,71 +147,74 @@ async function getWebflowItemsByPath(collectionId) {
     console.error("Error fetching existing Webflow items:", error.message);
     debugLog(`API Error details: ${JSON.stringify(error.message)}`);
     if (error.response) {
-      console.error("Response data:", error.response.data);
-      console.error("Response status:", error.response.status);
-      debugLog(`Response headers: ${JSON.stringify(error.response.headers)}`);
+      console.error("Response data:", error.response);
+      debugLog(`Response details: ${JSON.stringify(error.response)}`);
     }
     throw error; // Re-throw to stop the process
   }
 }
-
 
 // Function to create or update item in Webflow
 async function syncItem(repoPath, mdContent, htmlContent, title, existingItemsMap) {
   const slug = generateSlug(repoPath);
   const existingItemId = existingItemsMap.get(repoPath);
 
+
   debugLog(`Syncing item: ${repoPath}`);
   debugLog(`Exists in Webflow: ${existingItemId ? 'Yes' : 'No'}`);
 
   const itemData = {
-    isArchived: false,
-    isDraft: false,
-    fieldData: {
-      [FIELD_ID_TITLE]: title,
-      [FIELD_ID_SLUG]: slug,
-      [FIELD_ID_PATH]: repoPath, // Store the original repository path
-      [FIELD_ID_HTML_CONTENT]: htmlContent,
-      [FIELD_ID_MD_CONTENT]: mdContent,
-      // Add other required fields here if any, e.g., 'live': true
-    },
+    // Note: webflow-api doesn't need isArchived and isDraft at the top level
+    [FIELD_ID_TITLE]: title,
+    [FIELD_ID_SLUG]: slug,
+    [FIELD_ID_PATH]: repoPath, // Store the original repository path
+    [FIELD_ID_HTML_CONTENT]: htmlContent,
+    [FIELD_ID_MD_CONTENT]: mdContent,
+    // Add other required fields here if any, e.g., 'live': true
   };
 
-  debugLog(`Item data: ${JSON.stringify({
-    title: itemData.fieldData[FIELD_ID_TITLE],
-    slug: itemData.fieldData[FIELD_ID_SLUG],
-    path: itemData.fieldData[FIELD_ID_PATH],
-    htmlContentLength: htmlContent.length,
-    mdContentLength: mdContent.length
-  })}`);
+  debugLog(`Item data: ${JSON.stringify({ ...itemData, "html-content": htmlContent.length, "markdown-content": mdContent.length })}`);
 
   try {
+    let response;
     if (existingItemId) {
       // Update existing item
       log(`Updating item for path: ${repoPath} (Webflow ID: ${existingItemId})`);
-      debugLog(`PUT request to: /collections/${WEBFLOW_COLLECTION_ID}/items/${existingItemId}`);
-      const response = await webflow.put(`/collections/${WEBFLOW_COLLECTION_ID}/items/${existingItemId}`, itemData);
-      debugLog(`Update response status: ${response.status}`);
+      debugLog(`PUT request to update item with ID ${existingItemId}`);
+
+      response = await webflow.collections.items.updateItem(
+        WEBFLOW_COLLECTION_ID,
+        existingItemId,
+        {
+          fieldData: itemData
+        });
+
+      debugLog(`Update response: ${JSON.stringify(response)}`);
       log(`Successfully updated item for path: ${repoPath}`);
     } else {
       // Create new item
       log(`Creating new item for path: ${repoPath}`);
-      debugLog(`POST request to: /collections/${WEBFLOW_COLLECTION_ID}/items`);
-      const response = await webflow.post(`/collections/${WEBFLOW_COLLECTION_ID}/items`, itemData);
-      debugLog(`Create response status: ${response.status}`);
-      debugLog(`Created with ID: ${response.data?._id || 'unknown'}`);
+      debugLog(`POST request to create new item`);
+      response = await webflow.collections.items.createItem(
+        WEBFLOW_COLLECTION_ID,
+        {
+          fieldData: itemData
+        });
+
+      debugLog(`Create response: ${JSON.stringify(response)}`);
+      debugLog(`Created with ID: ${response?._id || 'unknown'}`);
       log(`Successfully created item for path: ${repoPath}`);
     }
+
+    return response;
   } catch (error) {
     console.error(`Error syncing item for path: ${repoPath}`, error.message);
     debugLog(`Sync error details: ${error.stack || error.message}`);
     if (error.response) {
-      console.error("Response data:", error.response.data);
-      console.error("Response status:", error.response.status);
-      debugLog(`Error response headers: ${JSON.stringify(error.response.headers)}`);
+      console.error("Response data:", error.response);
+      debugLog(`Error response details: ${JSON.stringify(error.response)}`);
     }
-    // Decide if you want to throw here or continue with other files
-    // throw error;
+    // Continue with other files rather than throwing
   }
 }
 
@@ -255,7 +258,7 @@ async function syncWebflow() {
         const htmlContent = md.render(markdownContent);
         debugLog(`Generated ${htmlContent.length} characters of HTML`);
 
-        const title = extractTitle(markdownContent);
+        const title = extractTitle(filePath);
         const repoPath = filePath; // The path relative to the repo root
 
         debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
@@ -275,6 +278,23 @@ async function syncWebflow() {
     console.error("Overall sync process failed:", overallError.message);
     debugLog(`Fatal error details: ${overallError.stack}`);
     process.exit(1); // Exit with a non-zero code to indicate failure in GitHub Actions
+  }
+}
+
+// Optional: Publish changes to the site after sync is complete
+async function publishSite() {
+  try {
+    log(`Publishing changes to Webflow site ${WEBFLOW_SITE_ID}...`);
+    const domains = await webflow.publishSite({
+      siteId: WEBFLOW_SITE_ID,
+      domains: 'all' // Publish to all domains
+    });
+
+    log(`Successfully published to domains: ${domains.join(', ')}`);
+  } catch (error) {
+    console.error("Error publishing site:", error.message);
+    debugLog(`Publish error details: ${error.stack || error.message}`);
+    // Not throwing error to avoid failing if sync was successful but publish failed
   }
 }
 
