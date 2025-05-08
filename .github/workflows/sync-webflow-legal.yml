@@ -5,8 +5,6 @@ on:
     branches:
       - main # Or your default branch
       - cicd
-    paths:
-      - '**/*.md' # Trigger only when .md files change
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,8 +34,8 @@ jobs:
           # --- IMPORTANT ---
           # Set these environment variables to the *API names* of your fields in Webflow
           # Find these in your Webflow project settings under "API & Integrations" -> Collections -> Legal Pages
-          WEBFLOW_TITLE_FIELD_ID: "title" 
+          WEBFLOW_TITLE_FIELD_ID: "title"
           WEBFLOW_SLUG_FIELD_ID: "slug"
           WEBFLOW_PATH_FIELD_ID: "path"
           WEBFLOW_HTML_FIELD_ID: "html-content"
-          WEBFLOW_MD_FIELD_ID: "md-content"          
+          WEBFLOW_MD_FIELD_ID: "md-content"
