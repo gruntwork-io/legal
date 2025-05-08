@@ -32,11 +32,3 @@ jobs:
           WEBFLOW_API_KEY: ${{ secrets.WEBFLOW_API_KEY }}
           WEBFLOW_SITE_ID: ${{ secrets.WEBFLOW_SITE_ID }}
           WEBFLOW_COLLECTION_ID: ${{ secrets.WEBFLOW_LEGAL_COLLECTION_ID }}
-          # --- IMPORTANT ---
-          # Set these environment variables to the *API names* of your fields in Webflow
-          # Find these in your Webflow project settings under "API & Integrations" -> Collections -> Legal Pages
-          WEBFLOW_TITLE_FIELD_ID: "title"
-          WEBFLOW_SLUG_FIELD_ID: "slug"
-          WEBFLOW_PATH_FIELD_ID: "path"
-          WEBFLOW_HTML_FIELD_ID: "html-content"
-          WEBFLOW_MD_FIELD_ID: "md-content"
