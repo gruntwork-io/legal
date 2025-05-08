@@ -74,6 +74,9 @@ function extractTitle(filePath) {
     })
     .join(' ');
 
+  if (titleCased === 'Sla') {
+    return 'Service Level Agreement';
+  }
   debugLog(`Generated title: "${titleCased}"`);
   return titleCased;
 }
