@@ -45,7 +45,7 @@ debugLog('Webflow API client initialized');
 // Function to find all markdown files
 async function findMdFiles(rootDir) {
   debugLog(`Searching for markdown files in: ${rootDir}`);
-  const files = await glob('../**/*.md', { ignore: ['.git/**', 'node_modules/**'], cwd: rootDir });
+  const files = await glob('../**/*.md', { ignore: ['.git/**', 'node_modules/**', 'scripts/**'], cwd: rootDir });
   debugLog(`Found ${files.length} markdown files`);
   return files;
 }
