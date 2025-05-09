@@ -35,7 +35,28 @@ debugLog('Environment configuration loaded');
 debugLog(`WEBFLOW_SITE_ID: ${WEBFLOW_SITE_ID}`);
 debugLog(`WEBFLOW_COLLECTION_ID: ${WEBFLOW_COLLECTION_ID}`);
 
-const md = new MarkdownIt();
+// Configure markdown with custom rendering for "Plain English" comments
+const md = new MarkdownIt({
+  html: true  // Enable HTML tags in source
+});
+
+// Function to preprocess markdown content to handle special comments
+function preprocessMarkdown(content) {
+  debugLog('Preprocessing markdown content');
+
+  // Replace "Plain English" comment blocks with a custom div
+  const processedContent = content.replace(
+    /<!--Plain English:([\s\S]*?)-->/g,
+    (_, plainEnglishContent) => {
+      // Trim whitespace and create a proper HTML section that won't be escaped
+      const cleanContent = plainEnglishContent.trim();
+      return `\n\n<div class="plain-english"><em>Plain English: ${cleanContent}</em></div>\n\n`;
+    }
+  );
+
+  debugLog('Markdown preprocessing complete');
+  return processedContent;
+}
 
 // Initialize the Webflow client
 const webflow = new WebflowClient({ accessToken: WEBFLOW_API_KEY });
@@ -45,7 +66,7 @@ debugLog('Webflow API client initialized');
 // Function to find all markdown files
 async function findMdFiles(rootDir) {
   debugLog(`Searching for markdown files in: ${rootDir}`);
-  const files = await glob('../**/*.md', { ignore: ['.git/**', 'node_modules/**', 'scripts/**', 'README.md'], cwd: rootDir });
+  const files = await glob('**/*.md', { ignore: ['.git/**', 'node_modules/**', 'scripts/**', 'README.md'], cwd: rootDir });
   debugLog(`Found ${files.length} markdown files`);
   return files;
 }
@@ -257,8 +278,9 @@ async function syncWebflow() {
         const markdownContent = fs.readFileSync(filePath, 'utf8');
         debugLog(`Read ${markdownContent.length} characters from file`);
 
-        debugLog('Converting markdown to HTML');
-        const htmlContent = md.render(markdownContent);
+        debugLog('Preprocessing markdown and converting to HTML');
+        const processedMarkdown = preprocessMarkdown(markdownContent);
+        const htmlContent = md.render(processedMarkdown);
         debugLog(`Generated ${htmlContent.length} characters of HTML`);
 
         const title = extractTitle(filePath);
