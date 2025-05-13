@@ -325,30 +325,7 @@ function writeHtmlToFile(filePath, htmlContent, frontmatter) {
   let headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
   const footerContent = fs.readFileSync(path.join('scripts', 'input', 'footer.html'), 'utf8');
 
-  // Remove the <h1 class="heading">...</h1> from the header if frontmatter.title is present
-  if (frontmatter && frontmatter.title) {
-    headerContent = headerContent.replace(/<h1 class=\"heading\">[\s\S]*?<\/h1>/, '');
-  }
-
-  // Insert the legal sections into the correct container after the heading
-  const container2Regex = /(<div class="w-layout-blockcontainer container-2 w-container">)([\s\S]*?<h1 class="heading">[\s\S]*?<\/h1>)/;
-  let fullHtmlContent;
-  if (container2Regex.test(headerContent)) {
-    // If the container and heading are present, insert after the heading
-    fullHtmlContent = headerContent.replace(
-      /(<div class="w-layout-blockcontainer container-2 w-container">[\s\S]*?<h1 class="heading">[\s\S]*?<\/h1>)/,
-      `$1${htmlContent}`
-    ) + footerContent;
-  } else if (headerContent.includes('<div class="w-layout-blockcontainer container-2 w-container">')) {
-    // If only the container is present, insert heading and content
-    fullHtmlContent = headerContent.replace(
-      /(<div class="w-layout-blockcontainer container-2 w-container">)/,
-      `$1${htmlContent}`
-    ) + footerContent;
-  } else {
-    // Fallback: append the container, heading, and content at the end
-    fullHtmlContent = headerContent + `<div class="w-layout-blockcontainer container-2 w-container">${htmlContent}</div>` + footerContent;
-  }
+  fullHtmlContent = headerContent + htmlContent + footerContent;
 
   // Ensure the output directory exists
   fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
