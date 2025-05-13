@@ -87,13 +87,13 @@ function generateHtmlLayout(sections, frontmatter) {
   let html = '<div class="legal-frontmatter" style="margin-bottom: 2.5em;">';
   if (frontmatter) {
     if (frontmatter.title) {
-      html += `<h1 class="heading" style="margin-bottom: 0.2em;">${frontmatter.title}</h1>`;
+      html += `<h1 class="heading" style="font-size: 3em; margin-bottom: 0.5em;">${frontmatter.title}</h1>`;
     }
     if (frontmatter.header) {
-      html += `<div style="font-size: 1.2em; font-weight: 500; margin-bottom: 0.2em; color: #ccc;">${frontmatter.header}</div>`;
+      html += `<div style="font-size: 1.2em; font-weight: 500; margin-bottom: 1em; color: #ccc;">${frontmatter.header}</div>`;
     }
     if (frontmatter.subheader) {
-      html += `<div style="font-size: 1.1em; font-weight: 500; margin-bottom: 0.2em; color: #bbb;">${frontmatter.subheader}</div>`;
+      html += `<div style="font-size: 1.1em; font-weight: 500; margin-bottom: 0.5em; color: #bbb;">${frontmatter.subheader}</div>`;
     }
     if (frontmatter.description) {
       html += `<div style="font-size: 1em; color: #aaa; margin-bottom: 0.5em;">${frontmatter.description}</div>`;
@@ -316,6 +316,7 @@ async function syncItem(repoPath, mdContent, htmlContent, title, existingItemsMa
 }
 
 // Good for debugging; write the HTML to a file for review
+// Expects a header.html and footer.html in the input directory; the body of each page is rendered between the header.html and footer.html.
 function writeHtmlToFile(filePath, htmlContent, frontmatter) {
   const htmlOutputPath = path.join('scripts', 'output', path.dirname(filePath), `${path.basename(filePath, '.md')}.html`);
   debugLog(`Writing HTML output to: ${htmlOutputPath}`);
@@ -404,8 +405,8 @@ async function syncWebflow() {
 
         writeHtmlToFile(filePath, htmlContent, frontmatter);
 
-        //debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
-        //await syncItem(repoPath, markdownContent, htmlContent, title, existingItemsMap);
+        debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
+        await syncItem(repoPath, markdownContent, htmlContent, title, existingItemsMap);
 
       } catch (fileProcessingError) {
         console.error(`Error processing file ${filePath}:`, fileProcessingError.message);
