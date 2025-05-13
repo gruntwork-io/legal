@@ -82,18 +82,22 @@ function parseSections(content) {
 
 // Function to generate side-by-side HTML layout for sections
 function generateHtmlLayout(sections) {
-  // Use a container and grid/flex rows for each section
+  // Render each section as a row with two columns, aligned vertically
   let html = '<div class="legal-sections-container">';
   for (const section of sections) {
-    html += '<div class="legal-section-row">';
-    html += '<div class="plain-english-col">';
+    html += '<div class="legal-section-row" style="display: flex; align-items: flex-start; margin-bottom: 32px;">';
+    html += '<div class="plain-english-col" style="flex: 1; min-width: 300px; padding-right: 32px;">';
     if (section.plainEnglish) {
-      html += md.render(section.plainEnglish);
+      html += '<div class="plain-english-block">' + md.render(section.plainEnglish) + '</div>';
+    } else {
+      html += '<div class="plain-english-block" style="min-height: 1em;"></div>';
     }
     html += '</div>';
-    html += '<div class="legalese-col">';
+    html += '<div class="legalese-col" style="flex: 2; min-width: 300px;">';
     if (section.legalese) {
-      html += md.render(section.legalese);
+      html += '<div class="legalese-block">' + md.render(section.legalese) + '</div>';
+    } else {
+      html += '<div class="legalese-block" style="min-height: 1em;"></div>';
     }
     html += '</div>';
     html += '</div>';
@@ -292,15 +296,37 @@ function writeHtmlToFile(filePath, htmlContent) {
   debugLog(`Writing HTML output to: ${htmlOutputPath}`);
 
   // Read header and footer templates
-  const headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
+  let headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
   const footerContent = fs.readFileSync(path.join('scripts', 'input', 'footer.html'), 'utf8');
-  
-  // Combine header, content and footer
-  const fullHtmlContent = headerContent + htmlContent + footerContent;
-  
+
+  // Extract the title for the heading
+  const title = extractTitle(filePath);
+  const headingHtml = `<h1 class="heading">${title}</h1>`;
+
+  // Insert the legal sections into the correct container after the heading
+  // Find the container-2 w-container div and insert after the heading
+  const container2Regex = /(<div class="w-layout-blockcontainer container-2 w-container">)([\s\S]*?<h1 class="heading">[\s\S]*?<\/h1>)/;
+  let fullHtmlContent;
+  if (container2Regex.test(headerContent)) {
+    // If the container and heading are present, insert after the heading
+    fullHtmlContent = headerContent.replace(
+      /(<div class="w-layout-blockcontainer container-2 w-container">[\s\S]*?<h1 class="heading">[\s\S]*?<\/h1>)/,
+      `$1${htmlContent}`
+    ) + footerContent;
+  } else if (headerContent.includes('<div class="w-layout-blockcontainer container-2 w-container">')) {
+    // If only the container is present, insert heading and content
+    fullHtmlContent = headerContent.replace(
+      /(<div class="w-layout-blockcontainer container-2 w-container">)/,
+      `$1${headingHtml}${htmlContent}`
+    ) + footerContent;
+  } else {
+    // Fallback: append the container, heading, and content at the end
+    fullHtmlContent = headerContent + `<div class="w-layout-blockcontainer container-2 w-container">${headingHtml}${htmlContent}</div>` + footerContent;
+  }
+
   // Ensure the output directory exists
   fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
-  
+
   // Write the HTML content to file
   fs.writeFileSync(htmlOutputPath, fullHtmlContent);
   debugLog(`Successfully wrote HTML to ${htmlOutputPath}`);
