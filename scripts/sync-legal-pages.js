@@ -286,6 +286,26 @@ async function syncItem(repoPath, mdContent, htmlContent, title, existingItemsMa
   }
 }
 
+// Good for debugging; write the HTML to a file for review
+function writeHtmlToFile(filePath, htmlContent) {
+  const htmlOutputPath = path.join('scripts', 'output', path.dirname(filePath), `${path.basename(filePath, '.md')}.html`);
+  debugLog(`Writing HTML output to: ${htmlOutputPath}`);
+
+  // Read header and footer templates
+  const headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
+  const footerContent = fs.readFileSync(path.join('scripts', 'input', 'footer.html'), 'utf8');
+  
+  // Combine header, content and footer
+  const fullHtmlContent = headerContent + htmlContent + footerContent;
+  
+  // Ensure the output directory exists
+  fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
+  
+  // Write the HTML content to file
+  fs.writeFileSync(htmlOutputPath, fullHtmlContent);
+  debugLog(`Successfully wrote HTML to ${htmlOutputPath}`);
+}
+
 // Main sync function
 async function syncWebflow() {
   debugLog('Starting Webflow sync process');
@@ -330,25 +350,9 @@ async function syncWebflow() {
         const title = extractTitle(filePath);
         const repoPath = filePath; // The path relative to the repo root
 
-        // Write HTML content to disk for debugging/review
-        const htmlOutputPath = path.join('scripts', 'output', path.dirname(filePath), `${path.basename(filePath, '.md')}.html`);
-        debugLog(`Writing HTML output to: ${htmlOutputPath}`);
+        writeHtmlToFile(filePath, htmlContent);
 
-        // Read header and footer templates
-        const headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
-        const footerContent = fs.readFileSync(path.join('scripts', 'input', 'footer.html'), 'utf8');
-        
-        // Combine header, content and footer
-        const fullHtmlContent = headerContent + htmlContent + footerContent;
-        
-        // Ensure the output directory exists
-        fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
-        
-        // Write the HTML content to file
-        fs.writeFileSync(htmlOutputPath, fullHtmlContent);
-        debugLog(`Successfully wrote HTML to ${htmlOutputPath}`);
-
-        debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
+        //debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
         //await syncItem(repoPath, markdownContent, htmlContent, title, existingItemsMap);
 
       } catch (fileProcessingError) {
