@@ -3,6 +3,7 @@ const path = require('path');
 const { glob } = require('glob');
 const MarkdownIt = require('markdown-it');
 const { WebflowClient } = require("webflow-api");
+const matter = require('gray-matter');
 
 
 // --- Configuration ---
@@ -81,9 +82,33 @@ function parseSections(content) {
 }
 
 // Function to generate side-by-side HTML layout for sections
-function generateHtmlLayout(sections) {
+function generateHtmlLayout(sections, frontmatter) {
+  // Render frontmatter if present
+  let html = '<div class="legal-frontmatter" style="margin-bottom: 2.5em;">';
+  if (frontmatter) {
+    if (frontmatter.title) {
+      html += `<h1 class="heading" style="margin-bottom: 0.2em;">${frontmatter.title}</h1>`;
+    }
+    if (frontmatter.header) {
+      html += `<div style="font-size: 1.2em; font-weight: 500; margin-bottom: 0.2em; color: #ccc;">${frontmatter.header}</div>`;
+    }
+    if (frontmatter.subheader) {
+      html += `<div style="font-size: 1.1em; font-weight: 500; margin-bottom: 0.2em; color: #bbb;">${frontmatter.subheader}</div>`;
+    }
+    if (frontmatter.description) {
+      html += `<div style="font-size: 1em; color: #aaa; margin-bottom: 0.5em;">${frontmatter.description}</div>`;
+    }
+  }
+  html += '</div>';
+
+  // Add column headers
+  html += '<div class="legal-columns-header" style="display: flex; align-items: flex-end; margin-bottom: 1.5em;">';
+  html += '<div style="flex: 1; min-width: 300px; font-size: 1.1em; font-weight: 600; color: #fff;">Plain English</div>';
+  html += '<div style="flex: 2; min-width: 300px; font-size: 1.1em; font-weight: 600; color: #fff;">Legalese</div>';
+  html += '</div>';
+
   // Render each section as a row with two columns, aligned vertically
-  let html = '<div class="legal-sections-container">';
+  html += '<div class="legal-sections-container">';
   for (const section of sections) {
     html += '<div class="legal-section-row" style="display: flex; align-items: flex-start; margin-bottom: 32px;">';
     html += '<div class="plain-english-col" style="flex: 1; min-width: 300px; padding-right: 32px;">';
@@ -291,7 +316,7 @@ async function syncItem(repoPath, mdContent, htmlContent, title, existingItemsMa
 }
 
 // Good for debugging; write the HTML to a file for review
-function writeHtmlToFile(filePath, htmlContent) {
+function writeHtmlToFile(filePath, htmlContent, frontmatter) {
   const htmlOutputPath = path.join('scripts', 'output', path.dirname(filePath), `${path.basename(filePath, '.md')}.html`);
   debugLog(`Writing HTML output to: ${htmlOutputPath}`);
 
@@ -299,12 +324,12 @@ function writeHtmlToFile(filePath, htmlContent) {
   let headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
   const footerContent = fs.readFileSync(path.join('scripts', 'input', 'footer.html'), 'utf8');
 
-  // Extract the title for the heading
-  const title = extractTitle(filePath);
-  const headingHtml = `<h1 class="heading">${title}</h1>`;
+  // Remove the <h1 class="heading">...</h1> from the header if frontmatter.title is present
+  if (frontmatter && frontmatter.title) {
+    headerContent = headerContent.replace(/<h1 class=\"heading\">[\s\S]*?<\/h1>/, '');
+  }
 
   // Insert the legal sections into the correct container after the heading
-  // Find the container-2 w-container div and insert after the heading
   const container2Regex = /(<div class="w-layout-blockcontainer container-2 w-container">)([\s\S]*?<h1 class="heading">[\s\S]*?<\/h1>)/;
   let fullHtmlContent;
   if (container2Regex.test(headerContent)) {
@@ -317,11 +342,11 @@ function writeHtmlToFile(filePath, htmlContent) {
     // If only the container is present, insert heading and content
     fullHtmlContent = headerContent.replace(
       /(<div class="w-layout-blockcontainer container-2 w-container">)/,
-      `$1${headingHtml}${htmlContent}`
+      `$1${htmlContent}`
     ) + footerContent;
   } else {
     // Fallback: append the container, heading, and content at the end
-    fullHtmlContent = headerContent + `<div class="w-layout-blockcontainer container-2 w-container">${headingHtml}${htmlContent}</div>` + footerContent;
+    fullHtmlContent = headerContent + `<div class="w-layout-blockcontainer container-2 w-container">${htmlContent}</div>` + footerContent;
   }
 
   // Ensure the output directory exists
@@ -369,14 +394,15 @@ async function syncWebflow() {
         debugLog(`Read ${markdownContent.length} characters from file`);
 
         debugLog('Parsing sections and generating side-by-side HTML layout');
-        const sections = parseSections(markdownContent);
-        const htmlContent = generateHtmlLayout(sections);
+        const { content, data: frontmatter } = matter(markdownContent);
+        const sections = parseSections(content);
+        const htmlContent = generateHtmlLayout(sections, frontmatter);
         debugLog(`Generated ${htmlContent.length} characters of HTML`);
 
         const title = extractTitle(filePath);
         const repoPath = filePath; // The path relative to the repo root
 
-        writeHtmlToFile(filePath, htmlContent);
+        writeHtmlToFile(filePath, htmlContent, frontmatter);
 
         //debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
         //await syncItem(repoPath, markdownContent, htmlContent, title, existingItemsMap);
