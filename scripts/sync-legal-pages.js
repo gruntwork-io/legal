@@ -3,6 +3,7 @@ const path = require('path');
 const { glob } = require('glob');
 const MarkdownIt = require('markdown-it');
 const { WebflowClient } = require("webflow-api");
+const matter = require('gray-matter');
 
 
 // --- Configuration ---
@@ -40,22 +41,94 @@ const md = new MarkdownIt({
   html: true  // Enable HTML tags in source
 });
 
-// Function to preprocess markdown content to handle special comments
-function preprocessMarkdown(content) {
-  debugLog('Preprocessing markdown content');
+// Function to parse markdown into sections of Plain English and Legalese
+function parseSections(content) {
+  // Regex to match all Plain English blocks
+  const regex = /<!--Plain English:([\s\S]*?)-->/g;
+  let match;
+  let lastIndex = 0;
+  const sections = [];
 
-  // Replace "Plain English" comment blocks with a custom div
-  const processedContent = content.replace(
-    /<!--Plain English:([\s\S]*?)-->/g,
-    (_, plainEnglishContent) => {
-      // Trim whitespace and create a proper HTML section that won't be escaped
-      const cleanContent = plainEnglishContent.trim();
-      return `\n\n<div class="plain-english"><em>Plain English: ${cleanContent}</em></div>\n\n`;
+  while ((match = regex.exec(content)) !== null) {
+    const plainEnglish = match[1].trim();
+    const start = match.index;
+    const end = regex.lastIndex;
+
+    // Legalese is the text between the end of the last match and the start of this match
+    if (start > lastIndex) {
+      const legalese = content.slice(lastIndex, start).trim();
+      if (sections.length > 0) {
+        // Attach legalese to previous section
+        sections[sections.length - 1].legalese += '\n' + legalese;
+      } else if (legalese) {
+        // If legalese comes before any Plain English, add as its own section
+        sections.push({ plainEnglish: '', legalese });
+      }
     }
-  );
+    // Start a new section with this Plain English
+    sections.push({ plainEnglish, legalese: '' });
+    lastIndex = end;
+  }
+  // Add any trailing legalese after the last Plain English
+  if (lastIndex < content.length) {
+    const legalese = content.slice(lastIndex).trim();
+    if (sections.length > 0) {
+      sections[sections.length - 1].legalese += '\n' + legalese;
+    } else if (legalese) {
+      sections.push({ plainEnglish: '', legalese });
+    }
+  }
+  return sections;
+}
 
-  debugLog('Markdown preprocessing complete');
-  return processedContent;
+// Function to generate side-by-side HTML layout for sections
+function generateHtmlLayout(sections, frontmatter) {
+  // Render frontmatter if present
+  let html = '<div class="legal-frontmatter" style="margin-bottom: 2.5em;">';
+  if (frontmatter) {
+    if (frontmatter.title) {
+      html += `<h1 class="heading" style="font-size: 3em; margin-bottom: 0.5em;">${frontmatter.title}</h1>`;
+    }
+    if (frontmatter.header) {
+      html += `<div style="font-size: 1.2em; font-weight: 500; margin-bottom: 1em; color: #ccc;">${frontmatter.header}</div>`;
+    }
+    if (frontmatter.subheader) {
+      html += `<div style="font-size: 1.1em; font-weight: 500; margin-bottom: 0.5em; color: #bbb;">${frontmatter.subheader}</div>`;
+    }
+    if (frontmatter.description) {
+      html += `<div style="font-size: 1em; color: #aaa; margin-bottom: 0.5em;">${frontmatter.description}</div>`;
+    }
+  }
+  html += '</div>';
+
+  // Add column headers
+  html += '<div class="legal-columns-header" style="display: flex; align-items: flex-end; margin-bottom: 1.5em;">';
+  html += '<div style="flex: 1; min-width: 300px; font-size: 1.1em; font-weight: 600; color: #fff;">Plain English</div>';
+  html += '<div style="flex: 2; min-width: 300px; font-size: 1.1em; font-weight: 600; color: #fff;">Legalese</div>';
+  html += '</div>';
+
+  // Render each section as a row with two columns, aligned vertically
+  html += '<div class="legal-sections-container">';
+  for (const section of sections) {
+    html += '<div class="legal-section-row" style="display: flex; align-items: flex-start; margin-bottom: 32px;">';
+    html += '<div class="plain-english-col" style="flex: 1; min-width: 300px; padding-right: 32px;">';
+    if (section.plainEnglish) {
+      html += '<div class="plain-english-block">' + md.render(section.plainEnglish) + '</div>';
+    } else {
+      html += '<div class="plain-english-block" style="min-height: 1em;"></div>';
+    }
+    html += '</div>';
+    html += '<div class="legalese-col" style="flex: 2; min-width: 300px;">';
+    if (section.legalese) {
+      html += '<div class="legalese-block">' + md.render(section.legalese) + '</div>';
+    } else {
+      html += '<div class="legalese-block" style="min-height: 1em;"></div>';
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
 }
 
 // Initialize the Webflow client
@@ -242,6 +315,26 @@ async function syncItem(repoPath, mdContent, htmlContent, title, existingItemsMa
   }
 }
 
+// Good for debugging; write the HTML to a file for review
+// Expects a header.html and footer.html in the input directory; the body of each page is rendered between the header.html and footer.html.
+function writeHtmlToFile(filePath, htmlContent, frontmatter) {
+  const htmlOutputPath = path.join('scripts', 'output', path.dirname(filePath), `${path.basename(filePath, '.md')}.html`);
+  debugLog(`Writing HTML output to: ${htmlOutputPath}`);
+
+  // Read header and footer templates
+  let headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
+  const footerContent = fs.readFileSync(path.join('scripts', 'input', 'footer.html'), 'utf8');
+
+  fullHtmlContent = headerContent + htmlContent + footerContent;
+
+  // Ensure the output directory exists
+  fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
+
+  // Write the HTML content to file
+  fs.writeFileSync(htmlOutputPath, fullHtmlContent);
+  debugLog(`Successfully wrote HTML to ${htmlOutputPath}`);
+}
+
 // Main sync function
 async function syncWebflow() {
   debugLog('Starting Webflow sync process');
@@ -278,9 +371,10 @@ async function syncWebflow() {
         const markdownContent = fs.readFileSync(filePath, 'utf8');
         debugLog(`Read ${markdownContent.length} characters from file`);
 
-        debugLog('Preprocessing markdown and converting to HTML');
-        const processedMarkdown = preprocessMarkdown(markdownContent);
-        const htmlContent = md.render(processedMarkdown);
+        debugLog('Parsing sections and generating side-by-side HTML layout');
+        const { content, data: frontmatter } = matter(markdownContent);
+        const sections = parseSections(content);
+        const htmlContent = generateHtmlLayout(sections, frontmatter);
         debugLog(`Generated ${htmlContent.length} characters of HTML`);
 
         const title = extractTitle(filePath);
