@@ -40,22 +40,66 @@ const md = new MarkdownIt({
   html: true  // Enable HTML tags in source
 });
 
-// Function to preprocess markdown content to handle special comments
-function preprocessMarkdown(content) {
-  debugLog('Preprocessing markdown content');
+// Function to parse markdown into sections of Plain English and Legalese
+function parseSections(content) {
+  // Regex to match all Plain English blocks
+  const regex = /<!--Plain English:([\s\S]*?)-->/g;
+  let match;
+  let lastIndex = 0;
+  const sections = [];
 
-  // Replace "Plain English" comment blocks with a custom div
-  const processedContent = content.replace(
-    /<!--Plain English:([\s\S]*?)-->/g,
-    (_, plainEnglishContent) => {
-      // Trim whitespace and create a proper HTML section that won't be escaped
-      const cleanContent = plainEnglishContent.trim();
-      return `\n\n<div class="plain-english"><em>Plain English: ${cleanContent}</em></div>\n\n`;
+  while ((match = regex.exec(content)) !== null) {
+    const plainEnglish = match[1].trim();
+    const start = match.index;
+    const end = regex.lastIndex;
+
+    // Legalese is the text between the end of the last match and the start of this match
+    if (start > lastIndex) {
+      const legalese = content.slice(lastIndex, start).trim();
+      if (sections.length > 0) {
+        // Attach legalese to previous section
+        sections[sections.length - 1].legalese += '\n' + legalese;
+      } else if (legalese) {
+        // If legalese comes before any Plain English, add as its own section
+        sections.push({ plainEnglish: '', legalese });
+      }
     }
-  );
+    // Start a new section with this Plain English
+    sections.push({ plainEnglish, legalese: '' });
+    lastIndex = end;
+  }
+  // Add any trailing legalese after the last Plain English
+  if (lastIndex < content.length) {
+    const legalese = content.slice(lastIndex).trim();
+    if (sections.length > 0) {
+      sections[sections.length - 1].legalese += '\n' + legalese;
+    } else if (legalese) {
+      sections.push({ plainEnglish: '', legalese });
+    }
+  }
+  return sections;
+}
 
-  debugLog('Markdown preprocessing complete');
-  return processedContent;
+// Function to generate side-by-side HTML layout for sections
+function generateHtmlLayout(sections) {
+  // Use a container and grid/flex rows for each section
+  let html = '<div class="legal-sections-container">';
+  for (const section of sections) {
+    html += '<div class="legal-section-row">';
+    html += '<div class="plain-english-col">';
+    if (section.plainEnglish) {
+      html += md.render(section.plainEnglish);
+    }
+    html += '</div>';
+    html += '<div class="legalese-col">';
+    if (section.legalese) {
+      html += md.render(section.legalese);
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
 }
 
 // Initialize the Webflow client
@@ -278,16 +322,34 @@ async function syncWebflow() {
         const markdownContent = fs.readFileSync(filePath, 'utf8');
         debugLog(`Read ${markdownContent.length} characters from file`);
 
-        debugLog('Preprocessing markdown and converting to HTML');
-        const processedMarkdown = preprocessMarkdown(markdownContent);
-        const htmlContent = md.render(processedMarkdown);
+        debugLog('Parsing sections and generating side-by-side HTML layout');
+        const sections = parseSections(markdownContent);
+        const htmlContent = generateHtmlLayout(sections);
         debugLog(`Generated ${htmlContent.length} characters of HTML`);
 
         const title = extractTitle(filePath);
         const repoPath = filePath; // The path relative to the repo root
 
+        // Write HTML content to disk for debugging/review
+        const htmlOutputPath = path.join('scripts', 'output', path.dirname(filePath), `${path.basename(filePath, '.md')}.html`);
+        debugLog(`Writing HTML output to: ${htmlOutputPath}`);
+
+        // Read header and footer templates
+        const headerContent = fs.readFileSync(path.join('scripts', 'input', 'header.html'), 'utf8');
+        const footerContent = fs.readFileSync(path.join('scripts', 'input', 'footer.html'), 'utf8');
+        
+        // Combine header, content and footer
+        const fullHtmlContent = headerContent + htmlContent + footerContent;
+        
+        // Ensure the output directory exists
+        fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
+        
+        // Write the HTML content to file
+        fs.writeFileSync(htmlOutputPath, fullHtmlContent);
+        debugLog(`Successfully wrote HTML to ${htmlOutputPath}`);
+
         debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
-        await syncItem(repoPath, markdownContent, htmlContent, title, existingItemsMap);
+        //await syncItem(repoPath, markdownContent, htmlContent, title, existingItemsMap);
 
       } catch (fileProcessingError) {
         console.error(`Error processing file ${filePath}:`, fileProcessingError.message);
