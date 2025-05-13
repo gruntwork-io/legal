@@ -380,8 +380,6 @@ async function syncWebflow() {
         const title = extractTitle(filePath);
         const repoPath = filePath; // The path relative to the repo root
 
-        writeHtmlToFile(filePath, htmlContent, frontmatter);
-
         debugLog(`Syncing item with title: "${title}", path: "${repoPath}"`);
         await syncItem(repoPath, markdownContent, htmlContent, title, existingItemsMap);
 
