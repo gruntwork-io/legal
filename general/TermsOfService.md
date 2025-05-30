@@ -22,29 +22,33 @@ We've defined some important terms.
 
 **“Affiliate”** means any person or entity owned or controlled by a party, owning or controlling a party, or under common ownership and control with a party, with “control” meaning the possession, directly or indirectly, of the power to direct or cause the direction of the management and policies of a person, whether through the ownership of voting securities, by contract interest or otherwise. For purposes of this Agreement, the term “Affiliate” does not include your investors or entities controlled by your investors that are not involved in your day-to-day business purpose.
 
-### 1.2. Authorized Users
-
-**“Authorized User”** means your employees, contractors, or Machine Users (as defined below) that are authorized under this Agreement to use the Services on your behalf.
-
-### 1.3. Confidential Information
+### 1.2. Confidential Information
 
 **“Confidential Information”** means any information or data disclosed by either party that is marked or otherwise designated as confidential or proprietary or that should otherwise be reasonably understood to be confidential in light of the nature of the information and the circumstances surrounding disclosure. However, “Confidential Information” will not include any information which (a) is in the public domain through no fault of receiving party; (b) was properly known to receiving party, without restriction, prior to disclosure by the disclosing party; (c) was properly disclosed to receiving party, without restriction, by another person with the legal authority to do so; or (d) is independently developed by the receiving party without use of or reference to the disclosing party’s Confidential Information.
 
-### 1.4. Documentation
+### 1.3. Documentation
 
 **“Documentation”** means the printed and digital instructions, on-line help files, technical documentation and user manuals made available by Gruntwork for the Services.
 
-### 1.5. Machine User
+### 1.4. Machine User
 
 **“Machine User”** means a user account set up by an individual human who accepts this Agreement on behalf of the user account, provides a valid email address, and is responsible for its actions. A Machine User is used exclusively for performing automated tasks. Multiple users may direct the actions of a Machine User, but the owner of the Machine User is ultimately responsible for the machine's actions.
 
-### 1.6. Order Form
+### 1.5. Order Form
 
 **“Order Form”** means an order form, quote or other similar document that sets forth the specific Services and pricing therefor (including in relation to overages), permitted number of users, licenses, and subscription term, and that references this Agreement and is mutually executed by the parties.
 
-### 1.7. Team
+### 1.6. Authorized User
 
-**“Team”** means a unique code repository used to manage infrastructure-as-code for a specific group or project within your organization, intended to represent a single team. Despite potential use by multiple groups, each code repository is considered one Team for the purpose of licensing under this Agreement.
+**“Authorized User”** means your employees, contractors, or Machine Users who you have designated to access and use the Services on your behalf, either (i) as specified in an Order Form, or (ii) through a subsequent written agreement with Gruntwork.
+
+### 1.7. IaC Library User
+
+**“IaC Library User”** means an Authorized User who you have designated to access and use the Gruntwork IaC Library, subject to the maximum number of IaC Library Users specified in your then-current Order Form or as otherwise agreed to in writing with Gruntwork.
+
+### 1.8. Platform Repository
+
+**“Platform Repository”** means a unique code repository used to manage infrastructure-as-code for a specific group or project within your organization.
 
 ## 2. The Services
 
@@ -78,10 +82,10 @@ Customer will (i) be responsible for all use of the Services under its account, 
 
 <!--Plain English:
 Both you and your affiliates can use Gruntwork.
-An Authorized User is a human or machine that you designate to use our services.
+An IaC Library User is a human or machine that you designate to use the IaC Library.
 -->
 
-You are entitled to up to the maximum number of Authorized Users and Teams specified in your most recent Order Form. If you wish to increase your maximum number of Authorized Users or Teams, you must purchase licenses from Gruntwork. When an Authorized User ends their employment or contractual relationship with you, you agree to remove the Authorized User within ten (10) business days.
+You are entitled to up to the maximum number of IaC Library Users and Platform Repositories specified in your most recent Order Form. If you wish to increase your maximum number of IaC Library Users or Platform Repositories, you must purchase licenses from Gruntwork. When an IaC Library User ends their employment or contractual relationship with you, you agree to remove the IaC Library User within ten (10) business days.
 
 ### 2.4 Data Security
 
@@ -153,7 +157,7 @@ The scope of your license will depend on the products and features you purchase 
 If you purchase a "Library Product" (Library), we give you a broad license to the code for use with your own infrastructure, and per [Section 4.4] you can continue using it even if you cancel. But you can't share the code with another company, resell it, publish it as open source, or try to sub-license it.
 -->
 
-The Library Products include Gruntwork Library, which is a collection of infrastructure code created and updated from time to time by Gruntwork, and which is made available via the private git repositories listed at https://www.gruntwork.io/legal/library-repos. Gruntwork hereby grants you a royalty-free, worldwide, non-exclusive, non-transferable (other than as specifically set forth in Section 15 below), non-sublicensable license to use, install, test, execute, perform, and copy the Library Products exclusively for your internal business use, and to create derivative works or otherwise modify the Library Products purely for your internal business purposes (the “Library License”). For the avoidance of doubt, you may not distribute any Library Products to a third-party. Your use of the Library Products is solely for your internal business use only. Additionally, the Library License is granted on a per Authorized User basis, and you must purchase and maintain a valid license for each Authorized User who accesses the Library Products. The Library License is only granted to you if your applicable Order Form explicitly includes reference to a Library Product.
+The Library Products include Gruntwork IaC Library, which is a collection of infrastructure code created and updated from time to time by Gruntwork, and which is made available via the private git repositories listed at https://www.gruntwork.io/legal/library-repos. Gruntwork hereby grants you a royalty-free, worldwide, non-exclusive, non-transferable (other than as specifically set forth in Section 15 below), non-sublicensable license to use, install, test, execute, perform, and copy the Library Products exclusively for your internal business use, and to create derivative works or otherwise modify the Library Products purely for your internal business purposes (the “Library License”). For the avoidance of doubt, you may not distribute any Library Products to a third-party. Your use of the Library Products is solely for your internal business use only. Additionally, the Library License is granted on a per IaC Library User basis, and you must purchase and maintain a valid license for each IaC Library User who accesses the Library Products. The Library License is only granted to you if your applicable Order Form explicitly includes reference to a Library Product.
 
 #### 3.2.2. License to Subscription Products
 
