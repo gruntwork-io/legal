@@ -1,3 +1,9 @@
+---
+title: Terms of Service
+header: This page outlines the terms of service and use of Gruntwork’s products and services.
+description: It’s important to understand these Terms of Service, as they define your rights and our rights in our relationship. But legalese is not always easy to understand, so we’ve provided “plain English” summaries on the left side of the page to help you understand the official legal language on the right side of the page. Remember that we’re providing you these summaries for informational purposes only. Our actual Terms are the ones on the right under "Legalese" and will apply if we ever need to work through any issues.
+---
+
 ## Preface
 
 <!--Plain English:
