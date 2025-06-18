@@ -235,6 +235,14 @@ If you give us a great idea, we get to use it and share it!
 
 You hereby grant Gruntwork a royalty-free, worldwide, transferable, sublicensable, irrevocable, perpetual license to use, reproduce, translate, modify, create derivative works from, distribute, and incorporate into the Services, any suggestions, enhancement requests, recommendations or other feedback provided by you or your Authorized Users relating to Services. Notwithstanding anything stated to the contrary in this Agreement, this irrevocable license will continue after the expiry or termination of this Agreement for any reason.
 
+### 3.9 Logo usage
+
+<!--Plain English:
+We may use your logo to identify you as a Gruntwork customer. You can ask us to stop using it at any time.
+-->
+
+Gruntwork may use Customer’s name, logo, and trademarks (collectively, “Customer Marks”) to identify Customer as a Gruntwork customer on Gruntwork’s website, marketing materials, and customer lists. Such use shall be limited to factual statements and in accordance with any usage guidelines Customer provides. Gruntwork shall not modify or use the Customer Marks in any manner that is misleading or disparaging. Upon written request from Customer, Gruntwork will promptly cease or modify such use to the extent commercially feasible.
+
 ## 4. Term and Termination
 
 ### 4.1. Term
