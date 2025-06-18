@@ -109,29 +109,51 @@ Check out the support plans we offer! Note that we support our own products, but
 
 Gruntwork will provide support for basic Terragrunt questions, bug fixes and general support for all Gruntwork products. Gruntwork will not be responsible for supporting issues that do not directly relate to the Services, such as general purpose DevOps technical support, or support for third-party solutions.
 
-Gruntwork will deliver one of the following support levels, as set forth in the applicable Order Form. 
+Gruntwork will deliver one of the following support levels, as set forth in the applicable Order Form.
 
-#### 2.5.1 Community Support
+#### 2.5.1 Standard Support
 
-Community Support includes:
+_(Formerly “Community Support”)_
 
-- **Support via Knowledge Base:** Access to our online repository of questions and answers from Gruntwork personnel.
-- **Support via Community Slack:** Participation in our customer-only Slack channel that includes informal support and interaction with other Gruntwork users.
-- **Support via Email:** Direct email support for personalized assistance.
-- **Named Technical Contacts:** The specified number of designated technical contacts within your organization may submit support requests via email.
-- **No SLA.** Community support does not include a service level agreement; Gruntwork personnel will respond on a best-effort basis.
+Standard Support includes:
 
-#### 2.5.2 Startup Support
+- **Channels:**
+    - Ticket-based support via email or an online ticketing portal
+- **Scope:**
+    - Troubleshooting and guidance for product usage
+    - Access to documentation and the knowledge base
+    - Support limited to standard configurations and best practices
+- **Response Time:**
+    - No guaranteed SLA; Gruntwork provides best-effort responses, typically within 3 business days (see [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) for details)
+  
+#### 2.5.2 Silver Support
 
-Startup Support includes all features of Community Support, plus:
+_(Formerly “Startup Support”)_
+
+Silver Support includes everything in Standard Support, plus:
+
+- **Channels:**
+    - Live video calls
+- **Scope:**
+    - Prioritized bug fixes
+- **Response Time:**
+    - Guaranteed response within 2 business days (see [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) for details).
 
 - **Support Service Level Agreement (SLA):** Response times to support inquiries according to the SLA set forth in the applicable Order Form.
 
-#### 2.5.3 Enterprise Support
+#### 2.5.3 Gold Support
 
-Enterprise Support includes all features of Startup Support, plus:
+_(Formerly “Enterprise Support”)_
 
-- **Support via Private Slack:** Request support in a Slack channel private to your Slack workspace and shared with the Gruntwork Slack workspace. 
+Gold Support includes everything in Silver Support, plus:
+
+- **Channels:**
+    - Private Slack channel on the Gruntwork Slack workspace
+- **Scope:**
+    - Prioritized feature requests
+    - Quarterly architecture and strategy reviews with a Gruntwork Solution Architect
+- **Response Time:**
+    - Next-business-day or same-day response SLA, depending on selected option on Order Form (see [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) for details)
 
 ## 3. Intellectual Property Rights
 
