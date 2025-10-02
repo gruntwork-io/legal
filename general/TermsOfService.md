@@ -42,9 +42,9 @@ We've defined some important terms.
 
 **“Authorized User”** means your employees, contractors, or Machine Users who you have designated to access and use the Services on your behalf, either (i) as specified in an Order Form, or (ii) through a subsequent written agreement with Gruntwork.
 
-### 1.7. IaC Library User
+### 1.7. Licensed User
 
-**“IaC Library User”** means an Authorized User who you have designated to access and use the Gruntwork IaC Library, subject to the maximum number of IaC Library Users specified in your then-current Order Form or as otherwise agreed to in writing with Gruntwork.
+**“Licensed User”** means an Authorized User who you have designated to access and use Gruntwork Library and/or Subscription Products, subject to the maximum number of User Licenses specified in your then-current Order Form or as otherwise agreed to in writing with Gruntwork.
 
 ### 1.8. Platform Repository
 
@@ -82,10 +82,10 @@ Customer will (i) be responsible for all use of the Services under its account, 
 
 <!--Plain English:
 Both you and your affiliates can use Gruntwork.
-An IaC Library User is a human or machine that you designate to use the IaC Library.
+A Licensed User is a human or machine that you designate to use Gruntwork Library and/or Subscription Products.
 -->
 
-You are entitled to up to the maximum number of IaC Library Users and Platform Repositories specified in your most recent Order Form. If you wish to increase your maximum number of IaC Library Users or Platform Repositories, you must purchase licenses from Gruntwork. When an IaC Library User ends their employment or contractual relationship with you, you agree to remove the IaC Library User within ten (10) business days.
+You are entitled to up to the maximum number of User Licenses and Platform Repositories specified in your most recent Order Form. If you wish to increase your maximum number of User Licenses or Platform Repositories, you must purchase licenses from Gruntwork. When a Licensed User ends their employment or contractual relationship with you, you agree to remove the Licensed User within ten (10) business days.
 
 ### 2.4 Data Security
 
@@ -179,7 +179,7 @@ The scope of your license will depend on the products and features you purchase 
 If you purchase a "Library Product" (Library), we give you a broad license to the code for use with your own infrastructure, and per [Section 4.4] you can continue using it even if you cancel. But you can't share the code with another company, resell it, publish it as open source, or try to sub-license it.
 -->
 
-The Library Products include Gruntwork IaC Library, which is a collection of infrastructure code created and updated from time to time by Gruntwork, and which is made available via the private git repositories listed at https://www.gruntwork.io/legal/library-repos. Gruntwork hereby grants you a royalty-free, worldwide, non-exclusive, non-transferable (other than as specifically set forth in Section 15 below), non-sublicensable license to use, install, test, execute, perform, and copy the Library Products exclusively for your internal business use, and to create derivative works or otherwise modify the Library Products purely for your internal business purposes (the “Library License”). For the avoidance of doubt, you may not distribute any Library Products to a third-party. Your use of the Library Products is solely for your internal business use only. Additionally, the Library License is granted on a per IaC Library User basis, and you must purchase and maintain a valid license for each IaC Library User who accesses the Library Products. The Library License is only granted to you if your applicable Order Form explicitly includes reference to a Library Product.
+The Library Products include AWS IaC Library, which is a collection of infrastructure code created and updated from time to time by Gruntwork, and which is made available via the private git repositories listed at https://www.gruntwork.io/legal/library-repos. Gruntwork hereby grants you a royalty-free, worldwide, non-exclusive, non-transferable (other than as specifically set forth in Section 15 below), non-sublicensable license to use, install, test, execute, perform, and copy the Library Products exclusively for your internal business use, and to create derivative works or otherwise modify the Library Products purely for your internal business purposes (the “Library License”). For the avoidance of doubt, you may not distribute any Library Products to a third-party. Your use of the Library Products is solely for your internal business use only. Additionally, the Library License is granted on a per User basis, and you must purchase and maintain a valid license for each User who accesses the Library Products. The Library License is only granted to you if your applicable Order Form explicitly includes reference to a Library Product.
 
 #### 3.2.2. License to Subscription Products
 
@@ -187,7 +187,9 @@ The Library Products include Gruntwork IaC Library, which is a collection of inf
 If you purchase a "Subscription Product" (Gruntwork Pipelines, Gruntwork Patcher, Gruntwork Catalog, Gruntwork Runbooks, support services, or access to KodeKloud), these products are provided to you on a subscription basis and you will lose access if you cancel.
 -->
 
-The Subscription Products include Gruntwork Pipelines, Gruntwork Patcher, Gruntwork Catalog, Gruntwork Runbooks, support services, and access to KodeKloud and are provided to you as hosted software, self-hosted software, or a pre-built binary. Subject to the terms and conditions of this Agreement, Gruntwork will make the Subscription Products available to you during the term of your applicable Order Form, and hereby grants you a non-exclusive right to access and use the Subscription Products for your business purposes (the “Subscription License”). No other license rights will apply to the Subscription Products. For the avoidance of doubt, the Post-Termination License (set forth in Section 4.4) does not apply to the Subscription License. Unless explicitly stated otherwise in your Order Form, your access and use of the Services are subject to the Subscription License.
+The Subscription Products include AWS Accelerator, AWS IaC Library, and Terragrunt Scale. These products are provided to you as hosted software, self-hosted software, pre-built binaries, or access to a collection of pre-written code. Subscription Products also include support services.
+Subject to the terms and conditions of this Agreement, Gruntwork will make the Subscription Products available to you during the term of your applicable Order Form, and hereby grants you a non-exclusive right to access and use the Subscription Products for your business purposes (the “Subscription License”). No other license rights will apply to the Subscription Products. 
+For the avoidance of doubt, the Post-Termination License (set forth in Section 4.4) does not apply to the Subscription License. Unless explicitly stated otherwise in your Order Form, your access and use of the Services are subject to the Subscription License.
 
 ### 3.3. Professional Services
 
