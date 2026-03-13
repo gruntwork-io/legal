@@ -123,7 +123,6 @@ async function syncItem(repoPath, htmlContent, title, existingItemsMap) {
   }
 }
 
-// FIX: Corrected SDK method from webflow.publishSite() to webflow.sites.publish()
 async function publishSite() {
   try {
     log(`Publishing Webflow site ${WEBFLOW_SITE_ID}...`);
@@ -157,9 +156,6 @@ async function syncWebflow() {
       console.error(`❌ Failed to process ${filePath}:`, err.message);
     }
   }
-
-  // FIX: Actually call publishSite() so changes go live
-  await publishSite();
   log("Sync complete.");
 }
 
