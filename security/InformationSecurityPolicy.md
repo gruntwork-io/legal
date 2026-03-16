@@ -427,11 +427,11 @@ The Information Security Manager maintains a service provider governance program
 
 Obtain approval from the Information Security Manager before engaging a service provider to perform functions that involve access to Gruntwork's systems or Confidential or Highly Confidential Information. All vendors must be reviewed and approved by Gruntwork management, in consultation with company legal counsel, as appropriate, prior to allowing any third party to collect, access, store, process, transmit, or dispose of any non-public information. Prior to engagement, Gruntwork must conduct a risk-based review of the vendor’s security practice in order to make a fact-based decision about whether or not to enter into a relationship with that vendor.
 
-### **Contract Obligations**
+### Contract Obligations
 
 Service providers that access Gruntwork's systems or Confidential or Highly Confidential Information must agree by contract to comply with applicable law, regulation, and Gruntwork policy or similar information security measures.
 
-### **Oversight**
+### Oversight
 
 Gruntwork may require service providers to demonstrate their compliance with applicable laws and this Policy by submitting to independent audits or other forms of review or certification based on risks.
 
