@@ -290,7 +290,7 @@ When an employee leaves the business, Gruntwork will timely deactivate the indiv
 
 Adhering to the principle of least privilege ensures that Gruntwork only grants individuals the privileges they need to perform their assigned activities and no more. Least privilege applies to user and administrative access. Managers must not grant administrative privileges unless there is a specific business need and should limit them to the extent feasible.
 
-### **Role-Based Access Controls**
+### Role-Based Access Controls
 
 Managers should use role-based access control methods whenever feasible to assign authorization levels according to business functions, rather than uniquely for each individual. This method supports the least privilege approach by standardizing access. It also simplifies periodic access reviews.
 
