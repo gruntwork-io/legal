@@ -15,7 +15,6 @@ function debugLog(message) { if (DEBUG) console.log(`[DEBUG] ${message}`); }
 
 const FIELD_ID_TITLE = process.env.WEBFLOW_TITLE_FIELD_ID || 'name';
 const FIELD_ID_SLUG = process.env.WEBFLOW_SLUG_FIELD_ID || 'slug';
-const FIELD_ID_PATH = process.env.WEBFLOW_PATH_FIELD_ID || 'path';
 const FIELD_ID_HTML_CONTENT = process.env.WEBFLOW_HTML_FIELD_ID || 'html-content';
 
 debugLog(`WEBFLOW_SITE_ID: ${WEBFLOW_SITE_ID}`);
@@ -56,17 +55,11 @@ function extractTitle(filePath) {
   return titleCased;
 }
 
-function generateSlug(filePath) {
-  let slug = filePath
-    .replace(/\.md$/, '')
-    .replace('..', '')
-    .toLowerCase()
-    .replace(/[\/\s_]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-  return slug || 'index';
+function generateSlug(title) {
+  return title.toLowerCase().replace(/\s+/g, '-');
 }
 
-async function getWebflowItemsByPath(collectionId) {
+async function getWebflowItemsBySlug(collectionId) {
   log(`Fetching existing items from Webflow collection ${collectionId}...`);
   const itemsMap = new Map();
   let offset = 0;
@@ -78,8 +71,8 @@ async function getWebflowItemsByPath(collectionId) {
       const response = await webflow.collections.items.listItems(collectionId, { limit, offset });
       if (response && Array.isArray(response.items)) {
         response.items.forEach(item => {
-          if (item?.fieldData[FIELD_ID_PATH]) {
-            itemsMap.set(item.fieldData[FIELD_ID_PATH], item.id);
+          if (item?.fieldData[FIELD_ID_SLUG]) {
+            itemsMap.set(item.fieldData[FIELD_ID_SLUG], item.id);
           }
         });
         hasMoreItems = response.items.length === limit;
@@ -97,13 +90,12 @@ async function getWebflowItemsByPath(collectionId) {
 }
 
 async function syncItem(repoPath, htmlContent, title, existingItemsMap) {
-  const slug = generateSlug(repoPath);
-  const existingItemId = existingItemsMap.get(repoPath);
+  const slug = generateSlug(title);
+  const existingItemId = existingItemsMap.get(slug);
 
   const fieldData = {
     [FIELD_ID_TITLE]: title,
     [FIELD_ID_SLUG]: slug,
-    [FIELD_ID_PATH]: repoPath,
     [FIELD_ID_HTML_CONTENT]: htmlContent,
   };
 
@@ -142,7 +134,7 @@ async function syncWebflow() {
   log(`Found ${markdownFiles.length} markdown files.`);
   if (markdownFiles.length === 0) { log("Nothing to sync."); return; }
 
-  const existingItemsMap = await getWebflowItemsByPath(WEBFLOW_COLLECTION_ID);
+  const existingItemsMap = await getWebflowItemsBySlug(WEBFLOW_COLLECTION_ID);
 
   for (const filePath of markdownFiles) {
     log(`Processing ${filePath}...`);
