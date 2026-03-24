@@ -78,14 +78,14 @@ You promise not to use our services in an improper way and to take responsibilit
 
 Customer will (i) be responsible for all use of the Services under its account, including use by its Authorized Users and Affiliates who have the right to use the Services, provided such Affiliate complies with the Agreement and conditions hereunder (ii) use commercially reasonable efforts to prevent unauthorized access to or use of the Services and notify Gruntwork promptly of any such unauthorized access or use or any other known or suspected breach of security or misuse of the Service and (iii) be responsible for obtaining and maintaining any equipment, software and ancillary services needed to connect to, access or otherwise use the Service, including as set forth in the Documentation. Customer will be solely responsible for its failure to maintain such equipment, software and services, and Gruntwork will have no liability for such failure (including under any service level agreement).
 
-### 2.3. Adding/Removing Users and Teams
+### 2.3. Adding/Removing Users
 
 <!--Plain English:
 Both you and your affiliates can use Gruntwork.
 A Licensed User is a human or machine that you designate to use Gruntwork Library and/or Subscription Products.
 -->
 
-You are entitled to up to the maximum number of User Licenses and Platform Repositories specified in your most recent Order Form. If you wish to increase your maximum number of User Licenses or Platform Repositories, you must purchase licenses from Gruntwork. When a Licensed User ends their employment or contractual relationship with you, you agree to remove the Licensed User within ten (10) business days.
+You are entitled to up to the maximum number of User Licenses specified in your most recent Order Form. If you wish to increase your maximum number of User Licenses, you must purchase licenses from Gruntwork. When a Licensed User ends their employment or contractual relationship with you, you agree to remove the Licensed User within ten (10) business days.
 
 ### 2.4 Data Security
 
@@ -176,7 +176,7 @@ The scope of your license will depend on the products and features you purchase 
 #### 3.2.1. License to Library Products
 
 <!--Plain English:
-If you purchase a "Library Product" (Library), we give you a broad license to the code for use with your own infrastructure, and per [Section 4.4] you can continue using it even if you cancel. But you can't share the code with another company, resell it, publish it as open source, or try to sub-license it.
+If you purchase a "Library Product" (Library), we give you a broad license to the code for use with your own infrastructure. You can't share the code with another company, resell it, publish it as open source, or try to sub-license it.
 -->
 
 The Library Products include Gruntwork AWS IaC Library, which is a collection of infrastructure code created and updated from time to time by Gruntwork, and which is made available via the private git repositories listed at https://www.gruntwork.io/legal/library-repos. Gruntwork hereby grants you a royalty-free, worldwide, non-exclusive, non-transferable (other than as specifically set forth in Section 15 below), non-sublicensable license to use, install, test, execute, perform, and copy the Library Products exclusively for your internal business use, and to create derivative works or otherwise modify the Library Products purely for your internal business purposes (the “Library License”). For the avoidance of doubt, you may not distribute any Library Products to a third-party. Your use of the Library Products is solely for your internal business use only. Additionally, the Library License is granted on a per User basis, and you must purchase and maintain a valid license for each User who accesses the Library Products. The Library License is only granted to you if your applicable Order Form explicitly includes reference to a Library Product.
@@ -184,10 +184,10 @@ The Library Products include Gruntwork AWS IaC Library, which is a collection of
 #### 3.2.2. License to Subscription Products
 
 <!--Plain English:
-If you purchase a "Subscription Product" (Gruntwork Pipelines, Gruntwork Patcher, Gruntwork Catalog, Gruntwork Runbooks, support services, or access to KodeKloud), these products are provided to you on a subscription basis and you will lose access if you cancel.
+If you purchase a "Subscription Product" (Gruntwork Platform, Terragrunt Scale, support or other enterprise enablement service), these products are provided to you on a subscription basis and you will lose access if you cancel.
 -->
 
-The Subscription Products include Gruntwork AWS Accelerator, Gruntwork AWS IaC Library, and Terragrunt Scale. These products are provided to you as hosted software, self-hosted software, pre-built binaries, or access to a collection of pre-written code. Subscription Products also include support services.
+The Subscription Products include Gruntwork Platform and Terragrunt Scale. These products are provided to you as hosted software, self-hosted software, pre-built binaries, or access to a collection of pre-written code. Subscription Products also include support and enterprise enablement services.
 Subject to the terms and conditions of this Agreement, Gruntwork will make the Subscription Products available to you during the term of your applicable Order Form, and hereby grants you a non-exclusive right to access and use the Subscription Products for your business purposes (the “Subscription License”). No other license rights will apply to the Subscription Products. 
 For the avoidance of doubt, the Post-Termination License (set forth in Section 4.4) does not apply to the Subscription License. Unless explicitly stated otherwise in your Order Form, your access and use of the Services are subject to the Subscription License.
 
@@ -251,10 +251,10 @@ Gruntwork may use Customer’s name, logo, and trademarks (collectively, “Cust
 
 <!--Plain English:
 Your use of the services requires a subscription. Your subscription will automatically renew for successive terms unless you tell us otherwise at least 15 days before it renews.
-Note that prior to May 2, 2024, these terms of service specified an initial and renewal term of 12 months.
+
 -->
 
-The term of this Agreement will become effective on the date these Terms are accepted by you and continue until your account is terminated as set forth below.. Except as set forth in an Order Form, the term of your Agreement will automatically renew for successive renewal terms equal to the length of the initial term, unless either party provides the other party with written notice of non-renewal at least fifteen (15) days prior to the end of the then-current term (each, a “Renewal Term”).
+The term of this Agreement will become effective on the date these Terms are accepted by you and continue until your account is terminated as set forth below. Except as set forth in an Order Form, the term of your Agreement will automatically renew for successive renewal terms equal to the length of the initial term, unless either party provides the other party with written notice of non-renewal at least fifteen (15) days prior to the end of the then-current term (each, a “Renewal Term”).
 
 Notwithstanding the foregoing, except as set forth in an Order Form, for customers who entered into an Agreement with Gruntwork on or before May 2, 2024, the initial term length of such Agreement and each Renewal Term thereof is twelve (12) months. 
 
@@ -273,7 +273,7 @@ If, at any time, any of the Services or the Agreement (or any portion hereof) ar
 ### 4.4. Post-Termination Library License
 
 <!--Plain English:
-If you purchase a Library buyout option (or if you signed up on or before May 2, 2024), even if you cancel, you can keep using all the Library Product code you had access to at the time of cancellation at no additional cost.
+If you purchase a Perpetual Library License, you can keep using all the Library Product code you had access to at the time of cancellation at no additional cost.
 We recommend that before termination, you clone any Gruntwork repos and update your infrastructure code to remove all references to private Gruntwork repos.
 -->
 
