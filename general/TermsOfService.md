@@ -50,6 +50,14 @@ We've defined some important terms.
 
 **“Platform Repository”** means a unique code repository used to manage infrastructure-as-code for a specific group or project within your organization.
 
+### 1.9. Cloud Account
+
+**Cloud Account** means a distinct and uniquely identifiable account within a supported cloud service provider (e.g., an AWS account, Azure subscription, or Google Cloud project), each of which constitutes a single Cloud Account, regardless of the number of resources deployed within such account.
+
+### 1.10. Infrastructure Unit
+
+**Infrastructure Unit** means a single, discrete deployment of infrastructure resources managed as a unit and defined either via explicit terragrunt.hcl file or implicit via a terragrunt stack definition (a unit within a terragrunt.stack.hcl file) within a Platform Repository, as identified by Gruntwork based on configuration, deployment boundaries, or other objective criteria.
+
 ## 2. The Services
 
 ### 2.1. Provision of the Services
