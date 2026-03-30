@@ -118,7 +118,10 @@ async function syncItem(repoPath, htmlContent, title, existingItemsMap) {
 async function publishSite() {
   try {
     log(`Publishing Webflow site ${WEBFLOW_SITE_ID}...`);
-    await webflow.sites.publish(WEBFLOW_SITE_ID, { publishToWebflowSubdomain: true });
+    await webflow.sites.publish(WEBFLOW_SITE_ID, {
+      customDomains: ["www.gruntwork.io"],
+      publishToWebflowSubdomain: true
+    });
     log(`✅ Site published successfully.`);
   } catch (error) {
     console.error("❌ Error publishing site:", error.message);
