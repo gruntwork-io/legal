@@ -107,13 +107,24 @@ To the extent that, as part of the Services, Gruntwork processes Personal Data o
 Check out the support plans we offer! Note that we support our own products, but we don't offer general-purpose DevOps support or support for third-party products.
 -->
 
-Gruntwork will provide support for basic Terragrunt questions, bug fixes and general support for all Gruntwork products. Gruntwork will not be responsible for supporting issues that do not directly relate to the Services, such as general purpose DevOps technical support, or support for third-party solutions.
+Gruntwork provides support for its Services. Support is limited to issues directly related to the Services and does not include general DevOps consulting or support for third-party products or services.
 
-Gruntwork will deliver one of the following support levels, as set forth in the applicable Order Form.
+Gruntwork will provide one of the following support levels, as set forth in the applicable Order Form, or, in the case of free offerings, as described below.
 
-#### 2.5.1 Standard Support
+#### 2.5.1 Free Tier Community Support
 
-_(Formerly “Community Support”)_
+Free Tier Community Support is provided solely through community-based channels and includes:
+
+- **Channels:**
+    - Public Terragrunt Scale channel in Discord (or any successor community platform designated by Gruntwork)
+- **Scope:**
+    - Informal troubleshooting, guidance, and discussion related to product usage, as made available by other users in the community
+- **Response Time:**
+    - No SLA applies. Gruntwork does not guarantee any response time or resolution.
+
+Free Tier Community Support is provided on an “as-is” basis. Gruntwork does not monitor, control, or endorse responses provided by other users and is not responsible for the accuracy, completeness, or reliability of any information shared in community channels. Participation by Gruntwork personnel, if any, is discretionary and does not create any obligation to provide support.
+
+#### 2.5.2 Standard Support
 
 Standard Support includes:
 
@@ -124,11 +135,9 @@ Standard Support includes:
     - Access to documentation and the knowledge base
     - Support limited to standard configurations and best practices
 - **Response Time:**
-    - No guaranteed SLA; Gruntwork provides best-effort responses, typically within 3 business days (see [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) for details)
+    - No guaranteed SLA. Gruntwork provides best-effort responses, typically within 3 business days. See [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) for details.
   
-#### 2.5.2 Silver Support
-
-_(Formerly “Startup Support”)_
+#### 2.5.3 Silver Support
 
 Silver Support includes everything in Standard Support, plus:
 
@@ -137,13 +146,9 @@ Silver Support includes everything in Standard Support, plus:
 - **Scope:**
     - Prioritized bug fixes
 - **Response Time:**
-    - Guaranteed response within 2 business days (see [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) for details).
+    - Guaranteed initial response within two (2) business days, in accordance with the SLA set forth at [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) and/or the applicable Order Form.
 
-- **Support Service Level Agreement (SLA):** Response times to support inquiries according to the SLA set forth in the applicable Order Form.
-
-#### 2.5.3 Gold Support
-
-_(Formerly “Enterprise Support”)_
+#### 2.5.4 Gold Support
 
 Gold Support includes everything in Silver Support, plus:
 
@@ -153,7 +158,7 @@ Gold Support includes everything in Silver Support, plus:
     - Prioritized feature requests
     - Quarterly architecture and strategy reviews with a Gruntwork Solution Architect
 - **Response Time:**
-    - Next-business-day or same-day response SLA, depending on selected option on Order Form (see [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla) for details)
+    - Next-business-day or same-day response SLA, depending on the option selected on the applicable Order Form, as further described at [gruntwork.io/legal/sla](http://gruntwork.io/legal/sla).
 
 ## 3. Intellectual Property Rights
 
