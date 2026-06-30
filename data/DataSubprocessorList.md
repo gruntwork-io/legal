@@ -23,7 +23,5 @@ Gruntwork needs a limited amount of data to provide the Gruntwork service to cus
 | **Ironclad**            | Customer contracts                   | USA     | https://ironcladapp.com |
 | **Slack**               | Customer support                     | USA     | https://slack.com/      |
 | **Stripe**              | Payment processing                   | USA     | https://stripe.com/     |
-| **Teachable**           | Video training                       | USA     | https://teachable.com/  |
 | **Zapier**              | Internal automation                  | USA     | https://zapier.com/     |
-| **Zendesk**             | Customer support                     | USA     | https://zendesk.com/    |
-| **Zoom**                | Cusomter support                     | USA     | https://zoom.us         |
+| **Zoom**                | Customer support                     | USA     | https://zoom.us         |
