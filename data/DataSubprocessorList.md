@@ -15,6 +15,7 @@ Gruntwork needs a limited amount of data to provide the Gruntwork service to cus
 | Third-Party Service     | Purpose                              | Country | Website                 |
 | ----------------------- | ------------------------------------ | ------- | ----------------------- |
 | **Amazon Web Services** | Cloud Service Provider               | USA     | https://aws.amazon.com  |
+| **Codio**               | Customer Education                   | USA     | https://codio.com/   |
 | **DocuSign**            | Customer contracts                   | USA     | https://docusign.com/   |
 | **GitHub**              | Private git repo access to customers | USA     | https://github.com/     |
 | **Gong**                | Customer support                     | USA     | https://gong.io         |
