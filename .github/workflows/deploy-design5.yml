@@ -1,0 +1,29 @@
+name: Deploy the design5 website
+
+# design5 fetches these documents at build time, so an edit is not live until that site builds.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.md'
+      - '!**/README.md'
+      - '!scripts/**'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-design5
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger the design5 build
+        env:
+          HOOK: ${{ secrets.DESIGN5_VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::DESIGN5_VERCEL_DEPLOY_HOOK is not set; the website will not pick this up"
+            exit 1
+          fi
+          curl --fail --silent --show-error -X POST "$HOOK"
