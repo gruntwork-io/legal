@@ -97,7 +97,7 @@ In addition to this Policy, Gruntwork implements and maintains a variety of addi
 - Website Privacy Policy. ****[https://gruntwork.io/legal/privacy-policy/](https://gruntwork.io/legal/privacy-policy/)
 - Cookie Policy. ****[https://gruntwork.io/legal/cookie-policy](https://gruntwork.io/legal/cookie-policy)
 - Data Processing Agreement. ****[https://gruntwork.io/legal/dpa](https://gruntwork.io/legal/dpa)
-- Data Sub-processors List. ****[https://gruntwork.io/legal/subprocessors](https://gruntwork.io/legal/subprocessors)
+- Data Sub-processors List. ****[https://gruntwork.io/legal/data-subprocessor-list](https://gruntwork.io/legal/data-subprocessor-list)
 - [Gruntwork PIIA](https://docs.google.com/document/d/1R1WfyhA9nvYeMFehIKRuCOpysDGcIpEY9BOUplm46DI/edit) (Proprietary Information and Inventions Agreement)
 
 [Gruntwork Incident Response Plan ](https://www.notion.so/Gruntwork-Incident-Response-Plan-02f5a54f511448e8833d32a99f53d62a?pvs=21)
@@ -387,7 +387,7 @@ Gruntwork conducts all code changes through pull requests. Every pull request mu
 
 All of Gruntwork code requires automated tests. Gruntwork uses a mixture of static analysis, unit tests, integration tests, and end-to-end tests, testing both application and infrastructure code. Every repo is configured to run tests after every single commit. Test results are visible in pull requests and are part of what maintainers take into consideration before merging.
 
-Automated testing in the infrastructure code space is still fairly novel. We’ve had to pioneer our own infrastructure test library, called [Terratest](https://www.terratest.gruntwork.io), which we've open sourced, and has become popular in the community. All of our infrastructure code is tested with Terratest: it supports testing for tools such as Terraform, Packer, Docker, Kubernetes, AWS, Google Cloud, Azure, and more.
+Automated testing in the infrastructure code space is still fairly novel. We’ve had to pioneer our own infrastructure test library, called [Terratest](https://terratest.gruntwork.io), which we've open sourced, and has become popular in the community. All of our infrastructure code is tested with Terratest: it supports testing for tools such as Terraform, Packer, Docker, Kubernetes, AWS, Google Cloud, Azure, and more.
 
 If we discover a bug in a public cloud provider or Terraform itself, we codify it explicitly using a test case. Likewise, we use test cases to verify our source code and product features work as intended by creating, modifying and destroying live infrastructure in the public cloud providers we support. You should follow these principles to the extent they apply to you.
 
@@ -492,7 +492,7 @@ Once all documents are reviewed, employees sign saying they have implemented the
 
 ### Gruntwork Data Subprocessors
 
-[https://gruntwork.io/legal/subprocessors](https://gruntwork.io/legal/subprocessors)
+[https://gruntwork.io/legal/data-subprocessor-list](https://gruntwork.io/legal/data-subprocessor-list)
 
 ### Our Cookie Policy
 
