@@ -1,8 +1,8 @@
 ## I. Purpose
 
-This Information Security Policy (“Policy”) sets forth the controls Gruntwork uses to ensure that information collected, stored, managed, or accessed by Gruntwork employees and contractors or through Gruntwork products, applications, or platforms, are adequately protected. By implementing and documenting the controls below, Gruntwork has established a framework to manage risks to the company, ensure compliance with applicable legal and regulatory requirements, and safeguard the company’s information technology, reputation, intellectual property, proprietary information, personal information, and customer data from misuse or compromise.
+This Information Security Policy (“Policy”) sets forth the controls Gruntwork uses to ensure that information collected, stored, managed, or accessed by Gruntwork employees and contractors or through Gruntwork products, applications, or platforms, is adequately protected. By implementing and documenting the controls below, Gruntwork has established a framework to manage risks to the company, ensure compliance with applicable legal and regulatory requirements, and safeguard the company’s information technology, reputation, intellectual property, proprietary information, personal information, and customer data from misuse or compromise.
 
-**This serves as a central policy document with which all employees and contractors must be familiar, and defines actions and prohibitions that you must follow.** However, no single policy can cover all the possible information security issues you may face. You must seek guidance from your manager or other designated Gruntwork resource before taking any actions that create information security risks or otherwise deviating from this Policy’s requirements. Gruntwork may treat any failure to seek and follow such guidance as a violation of this Policy.
+**This serves as a central policy document with which all employees and contractors must be familiar, and defines actions and prohibitions that you must follow.** However, no single policy can cover all the possible information security issues you may face. You must seek guidance from your manager or other designated Gruntwork resource before taking any actions that create information security risks or otherwise deviate from this Policy’s requirements. Gruntwork may treat any failure to seek and follow such guidance as a violation of this Policy.
 
 ## II. Scope
 
@@ -14,7 +14,7 @@ This Policy covers all information and all computing resources used throughout G
 
 **“Device”** means any desktop computer, laptop computer, tablet, handheld or mobile device, telephone or other electronic product or device that has a platform on which to download, install, or run any software program, code, script, or other content and with the capability to capture, access, or transmit Proprietary or other Confidential Information.
 
-**“Gruntwork Business”** means all activities relating to Gruntwork’s technology, relationships, partnerships, financial affairs, and provision of DevOp services.
+**“Gruntwork Business”** means all activities relating to Gruntwork’s technology, relationships, partnerships, financial affairs, and provision of DevOps services.
 
 **“Gruntwork-Provided Account”** means any internet-based or other business account provided and controlled by Gruntwork.
 
@@ -41,7 +41,7 @@ Just as importantly, the secure option should be the easy option. If you try to 
 
 **Defense-in-Depth**. Humans make mistakes. Frequently. Even the most algorithmically perfect security system is not of much value if a single person making a mistake (and someone will make a mistake) leads to catastrophic failure. Therefore, a good security system is made up of many layers that back each other up, much like multiple walls in a castle, and of many isolated areas that limit the scope of any damage that happens, much like bulkheads in a ship.
 
-**Least Privilege.** The principle of least privilege states that a principal (e.g. a user or a computer process) should be given the most minimum privileges necessary to do their job, and no more. This concept is closely related to defense-in-depth, as it limits the damage that can happen if something goes wrong (e.g., the user account gets hacked), much like a bulkhead.
+**Least Privilege.** The principle of least privilege states that a principal (e.g. a user or a computer process) should be given the minimum privileges necessary to do their job, and no more. This concept is closely related to defense-in-depth, as it limits the damage that can happen if something goes wrong (e.g., the user account gets hacked), much like a bulkhead.
 
 ## V. Governance
 
@@ -51,7 +51,7 @@ While security is a team effort and requires everyone’s participation, Gruntwo
 
 In addition to the Information Security Manager, additional Gruntwork personnel shall provide support and technical advice, as needed, including by serving as members of a standing team (“Information Security Team”). These additional members will be chosen by the Information Security Manager. Experts (internal or third-party) may also be included on the Information Security Team on a case-by-case basis. These experts will also be chosen by the Information Security Manager and Gruntwork leadership.
 
-The current information security manager is @Yevgeniy Brikman (as of 5/18/2021).
+The current Information Security Manager is @Yevgeniy Brikman (as of 5/18/2021).
 
 ### Risk Assessments
 
@@ -81,7 +81,7 @@ Recognizing that an astute workforce is the best line of defense, we strive to p
 
 [Policies](https://www.notion.so/Policies-6567599f50a64c9ba9560360fc8a6fea?pvs=21)
 
-Employees must certify in writing that they have completed the training and have read and agree to comply with documents within the link above.
+Employees must certify in writing that they have completed the training and have read and agree to comply with the documents linked above.
 
 In addition, Gruntwork promotes security awareness and educates employees through regular newsletters and ad hoc security awareness campaigns.
 
@@ -112,9 +112,9 @@ If Gruntwork agrees to comply with additional customer-specific information secu
 
 ### Exceptions
 
-Gruntwork recognizes that specific business needs and local situations may occasionally call for an exception to this Policy. Exception must be granted, in writing, in advance by Gruntwork leadership.
+Gruntwork recognizes that specific business needs and local situations may occasionally call for an exception to this Policy. Exceptions must be granted, in writing, in advance by Gruntwork leadership.
 
-**You should not assume that Gruntwork leadership will approve an exception simply because he or she has previously approved a similar exception.** Each non-compliant situation requires a review of the specific facts and risks to Gruntwork’s information assets and those of our customers.
+**You should not assume that Gruntwork leadership will approve an exception simply because they have previously approved a similar exception.** Each non-compliant situation requires a review of the specific facts and risks to Gruntwork’s information assets and those of our customers.
 
 Gruntwork leadership will periodically review all granted exceptions to confirm that a business need for the exception still exists.
 
