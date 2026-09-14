@@ -51,7 +51,7 @@ While security is a team effort and requires everyone’s participation, Gruntwo
 
 In addition to the Information Security Manager, additional Gruntwork personnel shall provide support and technical advice, as needed, including by serving as members of a standing team (“Information Security Team”). These additional members will be chosen by the Information Security Manager. Experts (internal or third-party) may also be included on the Information Security Team on a case-by-case basis. These experts will also be chosen by the Information Security Manager and Gruntwork leadership.
 
-The current Information Security Manager is @Yevgeniy Brikman (as of 5/18/2021).
+The current Information Security Manager is @ZachGoldberg (as of 9/14/2026).
 
 ### Risk Assessments
 
