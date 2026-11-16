@@ -404,7 +404,7 @@ No failure or omission by either Party in the performance of any obligation of t
 An official notice under this agreement can be sent by personal delivery, registered or certified mail, overnight courier, or email.
 -->
 
-Any notice required or permitted to be given hereunder will be given in writing by personal delivery, certified mail, return receipt requested, or by overnight delivery. Notices to Customer must be sent to Customer’s email or other address as set forth in Customer’s account information. Notices to Assembly must be sent to the following address:
+Any notice required or permitted to be given hereunder will be given in writing by personal delivery, certified mail, return receipt requested, or by overnight delivery. Notices to Customer must be sent to Customer’s email or other address as set forth in Customer’s account information. Notices to Gruntwork must be sent to the following address:
 
 > 2307 Fenton Pkwy, #107-623, San Diego, California, USA 92108,
 > legal@gruntwork.io
